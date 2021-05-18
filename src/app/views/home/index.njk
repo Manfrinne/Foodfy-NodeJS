@@ -1,7 +1,7 @@
-{% extends "./layout.njk" %}
+{% extends "./layoutHome.njk" %}
 
 {% block head %}
-  <script src="/scripts/users_script.js" defer></script>
+  <script src="/scripts/home_script.js" defer></script>
   <title>Foodfy home</title>
 {% endblock %}
 
@@ -10,12 +10,12 @@
   <div class="header">
 
     <div class="menu-links">
-      <a href="/users/about">Sobre</a>
-      <a href="/users/recipes">Receitas</a>
-      <a href="/users/chefs">Chefs</a>
+      <a href="/home/about">Sobre</a>
+      <a href="/home/recipes">Receitas</a>
+      <a href="/home/chefs">Chefs</a>
     </div>
 
-    <form action="/users" method="GET">
+    <form action="/home" method="GET">
       <input type="text" name="filter" placeholder="Buscar uma receita" value={{filter}}>
       <button type="submit">Buscar</button>
     </form>

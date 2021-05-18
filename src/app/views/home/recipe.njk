@@ -1,8 +1,8 @@
-{% extends "./layout.njk" %}
+{% extends "./layoutHome.njk" %}
 
 {% block head %}
     <title>Foodfy {{recipe.title}} </title>
-    <script src="/scripts/users_script.js" defer></script>
+    <script src="/scripts/home_script.js" defer></script>
 {% endblock %}
 
 {% block header %}
@@ -10,9 +10,9 @@
   <div class="header">
 
     <div class="menu-links">
-      <a href="/users/about">Sobre</a>
-      <a href="/users/recipes"><strong>Receitas</strong></a>
-      <a href="/users/chefs">Chefs</a>
+      <a href="/home/about">Sobre</a>
+      <a href="/home/recipes"><strong>Receitas</strong></a>
+      <a href="/home/chefs">Chefs</a>
     </div>
 
   </div>

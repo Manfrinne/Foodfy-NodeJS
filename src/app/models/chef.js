@@ -47,7 +47,7 @@ module.exports = {
 
   },
 
-  chefUsersList() {
+  chefhomeList() {
 
     return db.query(`
     SELECT chefs.*, count(recipes) AS total_recipes

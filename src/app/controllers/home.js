@@ -19,7 +19,7 @@ module.exports = {
       results = await Recipe.findBy(filter)
       const recipes = results.rows
 
-      return res.render('users/findRecipe', {recipes, filter, files})
+      return res.render('home/findRecipe', {recipes, filter, files})
 
     } else {
 
@@ -34,13 +34,13 @@ module.exports = {
 
       if (!recipes[0]) recipes = []
 
-      return res.render('users/index', { recipes, files })
+      return res.render('home/index', { recipes, files })
 
     }
   },
 
   about(req, res) {
-    return res.render('users/about')
+    return res.render('home/about')
   },
 
   async listRecipes(req, res) {
@@ -59,14 +59,14 @@ module.exports = {
       results = await Recipe.findBy(filter)
       filter = results.rows
 
-      return res.render('users/findRecipe', {recipes, filter, files})
+      return res.render('home/findRecipe', {recipes, filter, files})
 
     } else {
 
       results = await Recipe.all()
       const recipes = results.rows
 
-      return res.render('users/recipes', { recipes, files })
+      return res.render('home/recipes', { recipes, files })
 
     }
   },
@@ -85,13 +85,13 @@ module.exports = {
       src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
     }))
 
-    return res.render("users/recipe", { recipe, files })
+    return res.render("home/recipe", { recipe, files })
 
   },
 
   async listChefs(req, res) {
 
-    let results = await Chef.chefUsersList()
+    let results = await Chef.chefhomeList()
     const chefs = results.rows
 
     results = await Chef.fileAvatar()
@@ -101,7 +101,7 @@ module.exports = {
       src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
     }))
 
-    return res.render('users/chefs', { chefs, files })
+    return res.render('home/chefs', { chefs, files })
 
   },
 
@@ -119,7 +119,7 @@ module.exports = {
     results = await Recipe.findBy(filter)
     const recipes = results.rows
 
-    return res.render('users/findRecipe', {recipes, filter, files})
+    return res.render('home/findRecipe', {recipes, filter, files})
 
   }
 }
