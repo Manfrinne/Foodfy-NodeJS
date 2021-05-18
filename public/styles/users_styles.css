@@ -1,0 +1,475 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+
+.content-layer {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+header {
+    width: 940px;
+    margin: 32px auto;
+
+    display: grid;
+    grid-template-columns: 213px 1fr 1fr;
+}
+
+#pointerLogo {
+    width: 120px;
+}
+
+header .menu a {
+    font-family: 'Roboto', regular;
+    font-size: 16px;
+    color: #111111;
+    line-height: 26px;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.menu-links {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.footer {
+  width: 100%;
+  border-top: 2px solid rgb(214, 178, 178);
+  background: #EEEEEE;
+  font-size: 14px;
+  color: #999999;
+  text-align: center;
+  height: 50px;
+  bottom: 0;
+  position: absolute;
+}
+
+/* HOME - INDEX PAGE */
+
+.hero {
+    width: 940px;
+    height: 365px;
+    margin: 0px auto;
+
+    background: #FBDFDB;
+    border-radius: 30px;
+
+    display: grid;
+    grid-template-columns: 525px 415px;
+}
+
+.hero h1 {
+    font-family: 'Roboto', bold;
+    font-size: 32px;
+    color: #111111;
+    width: 305px;
+    height: 38px;
+
+    margin-left: 60px;
+    margin-top: 117px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    opacity: 0.7;
+    font-family: 'Roboto', regular;
+    font-size: 18px;
+    line-height: 28px;
+    width: 315px;
+    height: 85px;
+    color: #000000;
+
+    margin-left: 60px;
+    margin-top: 0px;
+
+}
+
+.hero img {
+    justify-self: center;
+    align-self: end;
+    width: 216px;
+    height: 300px;
+}
+
+.cards {
+    width: 940px;
+    height: auto;
+    margin: 0px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+h2 {
+    font-family: 'Roboto', bold;
+    font-size: 24px;
+    color: #111111;
+    margin: 50px auto 19px auto;
+    width: 940px;
+}
+
+.card img {
+    object-fit: cover;
+    width: 300px;
+    height: 140px;
+    border-radius: 15px;
+}
+
+
+.card .plate-name h5 {
+    font-family: 'Roboto', regular;
+    font-size: 18px;
+    color: #111111;
+    font-weight: normal;
+    margin-top: 17px;
+    margin-bottom: 3px;
+}
+
+.card .cooker-name p {
+    font-family: 'Roboto', regular;
+    font-size: 14px;
+    color: #777777;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+/* Sobre-HTML */
+
+.sobre-text {
+    width: 940px;
+    margin: 32px auto;
+}
+
+.sobre-text h3 {
+    font-size: 24px;
+    font-family: 'Roboto', bold;
+    color: #111111;
+}
+
+.sobre-text p {
+    font-family: 'Roboto', regular;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+.sobre-text h4 {
+    font-family: 'Roboto', bold;
+    font-size: 20px;
+    color: #111111;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Unique Recipe */
+
+.uniq_recipe {
+  min-height: 1250px;
+  width: 940px;
+  height: 100%;
+  margin: auto;
+}
+
+.titleSingleRecipe {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.titleSingleRecipe h3 {
+  font-family: 'Roboto', bold;
+  font-size: 24px;
+  color: #111111;
+  line-height: 34px;
+  margin: 0px;
+}
+
+.titleSingleRecipe a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 136px;
+  height: 37px;
+  background-color: #6558C3;
+  font-family: 'Roboto', bold;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+
+.highlight img{
+  object-fit: cover;
+  width: 940px;
+  height: 280px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.gallery-preview {
+  width: 940px;
+  height: 64px;
+  display: flex;
+
+  gap: 8px;
+
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.gallery-preview img {
+  width: 50px;
+  height: 50px;
+
+  object-fit: cover;
+
+  opacity: 0.6;
+
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.gallery-preview img:hover,
+.gallery-preview img.active {
+  opacity: 1;
+}
+
+.uniq_recipe_infor {
+  text-align: center;
+}
+
+.uniq_recipe_name {
+  font-family: 'Roboto', bold;
+  font-size: 36px;
+  color: #111111;
+  line-height: 42px;
+  margin-top: 0;
+}
+
+.uniq_cooker {
+  font-family: 'Roboto', regular;
+  font-size: 20px;
+  color: #777777;
+  line-height: 24px;
+  margin-top: 4px;
+  margin-bottom: 32px;
+}
+
+.uniq_recipe_content {
+  width: 940px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.uniq_topics {
+  font-family: 'Roboto', bold;
+  font-size: 26px;
+  color: #111111;
+  line-height: 28px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.uniq_topics_content {
+  font-family: 'Roboto', regular;
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
+}
+
+.uniq_topics_contents li:last-child {
+  margin-bottom: 42px;
+}
+
+.topics {
+  display: flex;
+  align-items: baseline;
+}
+
+/* FILTER HEADER */
+
+header .header {
+  width: 727px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+header .header a {
+  margin: 0;
+  width: 120px;
+}
+
+header .header form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  grid-gap: 8px;
+}
+
+header .header form input {
+  border: 1px solid #eee;
+  padding: 10px 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+header .header form button {
+  margin: 0;
+}
+
+button[type="submit"] {
+  padding: 8px 32px;
+  font-size: 16px;
+  color: white;
+  background: #6558C3;
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* CHEFE LISTAGEM - CHEFS PAGE */
+
+.chef-manager-cards {
+  width: 940px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.chef-manager-cards .single-chef-manager-card {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.chef-manager-cards .single-chef-manager-card .avatar-chef-manager img {
+  object-fit: cover;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.card-description-chef-name h6 {
+  font-weight: normal;
+  font-size: 18px;
+  color: #111111;
+  margin-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.chef-manager-cards .single-chef-manager-card .chef-card-description .recipes-amount {
+  font-size: 14px;
+  color: #666666;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+/* Unique Recipe */
+
+.uniq_recipe {
+  min-height: 100%;
+  width: 940px;
+  margin: auto;
+}
+
+.uniq_img img{
+  object-fit: cover;
+  width: 940px;
+  height: 280px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.uniq_recipe_infor {
+  text-align: center;
+}
+
+.uniq_plate {
+  font-family: 'Roboto', bold;
+  font-size: 36px;
+  color: #111111;
+  line-height: 42px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.uniq_cooker {
+  font-family: 'Roboto', regular;
+  font-size: 20px;
+  color: #777777;
+  line-height: 24px;
+  margin-top: 4px;
+  margin-bottom: 32px;
+}
+
+.uniq_recipe_content {
+  width: 940px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.uniq_recipe_content h4 {
+  width: 61px;
+  height: 14px;
+  margin-left: 8px;
+  font-size: 12px;
+  color: #999999;
+  cursor: pointer;
+}
+
+.uniq_topics {
+  font-family: 'Roboto', bold;
+  font-size: 26px;
+  color: #111111;
+  line-height: 28px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.uniq_topics_content {
+  font-family: 'Roboto', regular;
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
+}
+
+.uniq_topics_contents li:last-child {
+  margin-bottom: 42px;
+}
+
+.topics {
+  display: flex;
+  align-items: baseline;
+}
+/* Hidden buttons - recipes/show */
+.uniq_topics_contents.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+

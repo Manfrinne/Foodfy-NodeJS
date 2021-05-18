@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <link rel="stylesheet" href="/styles/users_styles.css">
+    <link rel="icon" href="/assets/favicon.ico">
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+
+    <header>
+      <a href="/users" id="pointerLogo"><img src="/assets/logo.png" alt="Logo"></a>
+      <div class="menu">
+        {% block header %}{% endblock %}
+      </div>
+    </header>
+
+    <section class="content-layer">
+
+      {% block content %}{% endblock %}
+
+      <footer class="footer">
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+      </footer>
+
+    </section>
+
+
+  </body>
+
+</html>

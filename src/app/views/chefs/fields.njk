@@ -1,0 +1,42 @@
+
+  <div class="inputs-chefe-create">
+    <div class="input-block">
+      <label for="name">Nome</label>
+      <div>
+        <input type="text" name="name" placeholder="Nome do chefe" value="{{chef.name}}">
+      </div>
+    </div>
+  </div>
+
+  <div class="inputs-chefe-create">
+
+    <div class="input-block">
+
+      <label for="photos">Avatar</label>
+
+      {% if chef.path %}
+
+        <input type="text" name="photos" value="{{chef.path}}">
+
+      {% endif %}
+
+
+      <div id="photos-chefe-upload">
+
+        <input
+          id="photos-input"
+          type="file"
+          name="photos"
+          accept="image/*"
+          onchange="PhotoAvatarUpload.handleAvatarFileInput(event)"
+        >{# dentro do 'event' tem o '.target' que é o input #}
+
+        <p class="buttons">Enviar Avatar</p>
+
+      </div>
+
+      <input type="hidden" name="removeAtavarfile" value="{{chef.file_id}}">
+
+    </div>
+
+  </div>

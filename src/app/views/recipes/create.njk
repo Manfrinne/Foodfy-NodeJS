@@ -1,0 +1,24 @@
+
+{% extends "../layout.njk" %}
+
+{% block content %}
+
+  <section class="uniq_recipe">
+
+    <div class="menu">
+      <h2 class="title">Criando Receita</h2>
+      <div class="buttons">
+        <button type="submit" form="create">Salvar Receita</button>
+      </div>
+    </div>
+
+    <form method="POST" id="create" action="/recipes" enctype="multipart/form-data">
+
+      {% include 'recipes/fields.njk' %}
+
+    </form>
+
+  </section>
+
+
+{% endblock content %}

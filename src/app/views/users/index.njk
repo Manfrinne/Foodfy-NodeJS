@@ -1,0 +1,72 @@
+{% extends "./layout.njk" %}
+
+{% block head %}
+  <script src="/scripts/users_script.js" defer></script>
+  <title>Foodfy home</title>
+{% endblock %}
+
+{% block header %}
+
+  <div class="header">
+
+    <div class="menu-links">
+      <a href="/users/about">Sobre</a>
+      <a href="/users/recipes">Receitas</a>
+      <a href="/users/chefs">Chefs</a>
+    </div>
+
+    <form action="/users" method="GET">
+      <input type="text" name="filter" placeholder="Buscar uma receita" value={{filter}}>
+      <button type="submit">Buscar</button>
+    </form>
+
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  <section class="hero">
+      <div class="text-intro">
+          <h1>As melhores receitas</h1>
+          <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+      </div>
+      <img src="/assets/chef.png" alt="Foodfy">
+  </section>
+
+<h2>Mais acessadas</h2>
+
+<section class="cards">
+
+  {%for recipe in recipes%}
+
+    <div class="card" id="{{recipe.title}}" number="{{recipe.id}}">
+
+      <div class="card__image-container">
+
+      {% for file in files %}
+        {% if file.recipe_id == recipe.id %}
+          <img src="{{file.src}}" alt="Image {{file.name}}">
+        {% endif %}
+      {% endfor %}
+
+      </div>
+
+      <div class="plate-name">
+          <h5>{{recipe.title}}</h5>
+      </div>
+      <div class="cooker-name">
+          <p>Por {{recipe.chef_name}}</p>
+      </div>
+
+    </div>
+
+  {%else%}
+
+    <h3 style="color: #777; font-size: 14px">Ainda não há receitas cadastradas!</h3>
+
+  {%endfor%}
+
+</section>
+
+{% endblock %}

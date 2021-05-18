@@ -1,0 +1,66 @@
+
+{% extends "../layout.njk" %}
+
+{% block content %}
+
+<div class="menu">
+  <h2 class="title">Chefe: {{chef.name}}</h2>
+  <div class="buttons">
+    <a href="{{chef.id}}/edit">Editar Chefe</a>
+  </div>
+</div>
+
+<section class="chefs-details">
+
+  <div class="chef-presentation-avatar">
+  {% if not photoAvatar %}
+    <img src="http://placehold.it/172x80?text=PRODUTO SEM FOTO" alt=""/>
+  {% else %}
+    <img src="{{photoAvatar.src}}">
+  {% endif %}
+    <h1 class="avatar-chef-name">{{chef.name}}</h1>
+    <h4 class="avatar-amount-recipes">{{chef.total_recipes}} receitas</h1>
+  </div>
+
+  <h2 class="recipes-title-cards">Receitas</h2>
+
+  <div class="chef-recipes-cards">
+
+    {%for recipe in recipes%}
+      <div class="single-recipe-card">
+        <div class="recipe-image">
+
+        {% for file in files %}
+          {% if file.recipe_id == recipe.id %}
+            <img src="{{file.src}}" alt="Image {{file.name}}">
+          {% endif %}
+        {% endfor %}
+
+        </div>
+        <div class="card-recipe-description">
+          <div class="card-description-plate-name">
+            <h6>{{recipe.title}}</h6>
+          </div>
+          <div class="card-description-chef-name">
+            <p>{{chef.name}}</p>
+          </div>
+          <div class="button-description-toView-ShowPage">
+            <a href="../recipes/{{recipe.id}}">Visualizar</a>
+          </div>
+        </div>
+      </div>
+
+    {%else%}
+
+      <h3 style="color: #777; font-size: 14px">Ainda não há receita cadastrada!</h3>
+
+    {%endfor%}
+
+  </div>
+
+</section>
+
+{% endblock content %}
+
+
+
