@@ -31,6 +31,22 @@ CREATE TABLE "recipe_files" (
   "file_id" INTEGER REFERENCES files(id)
 );
 
+CREATE TABLE "users" (
+  "id" SERIAL PRIMARY KEY,
+  "name" text NOT NULL,
+  "email" text UNIQUE NOT NULL,
+  "password" text NOT NULL,
+  "reset_token" text,
+  "reset_token_expires" text,
+  "is_admin" BOOLEAN DEFAULT false,
+  "created_at" timestamp DEFAULT (now()),
+  "updated_at" timestamp DEFAULT (now())
+);
+
+--FOREIGN KEY USERS
+ALTER TABLE "recipes" ADD COLUMN user_id int;
+ALTER TABLE "recipes" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
+
 -- ######## FUNCTION PARA ATUALIZAR updated_at ##########
 
 CREATE FUNCTION foodfy_trigger_set_timestamp()
