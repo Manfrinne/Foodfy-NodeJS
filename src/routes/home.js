@@ -1,15 +1,15 @@
 const express = require('express')
 const routes = express.Router()
 
-const home = require('../app/controllers/home')
+const HomeController = require('../app/controllers/HomeController')
 
 //HOME
-routes.get('/', home.index)
-routes.get('/about', home.about)
-routes.get('/recipes', home.listRecipes)
-routes.get('/recipes/:id', home.showRecipe)
-routes.get('/chefs', home.listChefs)
-routes.get('/findRecipe', home.findRecipe)
+routes.get('/', HomeController.index)
+routes.get('/about', HomeController.about)
+routes.get('/recipes', HomeController.listRecipes)
+routes.get('/recipes/:id', HomeController.showRecipe)
+routes.get('/chefs', HomeController.listChefs)
+routes.get('/findRecipe', HomeController.findRecipe)
 
 
 module.exports = routes

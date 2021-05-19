@@ -3,16 +3,16 @@ const routes = express.Router()
 
 const multer = require("../app/middlewares/multer")
 
-const chefs = require('../app/controllers/chefs')
+const ChefController = require('../app/controllers/ChefController')
 
 // ADMIN CHEFS
-routes.get('/', chefs.index)
-routes.get('/create', chefs.create)
-routes.post('/', multer.single("photos"), chefs.post)
-routes.get('/:id', chefs.show)
-routes.get('/:id/edit', chefs.edit)
-routes.put('/', multer.single("photos"), chefs.put)
-routes.delete('/chefs', chefs.delete)
+routes.get('/', ChefController.index)
+routes.get('/create', ChefController.create)
+routes.post('/', multer.single("photos"), ChefController.post)
+routes.get('/:id', ChefController.show)
+routes.get('/:id/edit', ChefController.edit)
+routes.put('/', multer.single("photos"), ChefController.put)
+routes.delete('/chefs', ChefController.delete)
 
 
 module.exports = routes

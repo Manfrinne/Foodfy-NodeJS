@@ -1,0 +1,38 @@
+<div class="users-grid">
+  <div class="users-fields">
+
+    <div class="inputs-users-create">
+        <label for="name">Nome</label>
+        <div class="input">
+          <input type="text" name="name" placeholder="Digite o nome do usuário" value="{{ user.name }}">
+        </div>
+    </div>
+
+    <div class="inputs-users-create">
+        <label for="email">Email</label>
+        <div class="input">
+          <input
+            type="email"
+            name="email"
+            placeholder="Digite seu email"
+            value="{{ user.email }}"
+            onblur="Validate.apply(this, 'isEmail')"
+          >
+        </div>
+    </div>
+
+  </div>
+
+  <div class="inputs-users-create users-isAdmin-field ">
+    <input
+        type="radio"
+        name="is_admin"
+        value="{{ user.is_admin }}"
+      >
+    <label for="is_admin">Administrador</label>
+  </div>
+</div>
+
+
+
+

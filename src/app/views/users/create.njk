@@ -1,0 +1,28 @@
+
+
+{% extends "../layoutAdmin.njk" %}
+
+{% block content %}
+
+<div class="menu">
+  <h2 class="title">Criar Usuário</h2>
+  <div class="create-user-buttons">
+      <div class="buttons">
+        <button type="submit" form="create">Salvar</button>
+      </div>
+      <div class="user-cancel buttons">
+        <button type="button"><a href="create">Cancelar</a></button>
+      </div>
+  </div>
+
+
+</div>
+
+<form method="POST" id="create" action="/users/create">
+
+  {% include 'users/fields.njk' %}
+
+</form>
+
+
+{% endblock content %}

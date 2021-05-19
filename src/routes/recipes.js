@@ -3,17 +3,17 @@ const routes = express.Router()
 
 const multer = require("../app/middlewares/multer")
 
-const recipes = require('../app/controllers/recipes')
+const RecipeController = require('../app/controllers/RecipeController')
 
 
 // RECIPES/
-routes.get('/', recipes.index)
-routes.get('/create', recipes.create)
-routes.post('/', multer.array("photos", 5), recipes.post)
-routes.get('/:id', recipes.show)
-routes.get('/:id/edit', recipes.edit)
-routes.put('/', multer.array("photos", 5), recipes.put)
-routes.delete('/', recipes.delete)
+routes.get('/', RecipeController.index)
+routes.get('/create', RecipeController.create)
+routes.post('/', multer.array("photos", 5), RecipeController.post)
+routes.get('/:id', RecipeController.show)
+routes.get('/:id/edit', RecipeController.edit)
+routes.put('/', multer.array("photos", 5), RecipeController.put)
+routes.delete('/', RecipeController.delete)
 
 
 module.exports = routes

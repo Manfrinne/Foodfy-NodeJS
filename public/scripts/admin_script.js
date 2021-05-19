@@ -182,9 +182,7 @@ function addIngredient() {
   newField.children[0].value = ""
   ingredients.appendChild(newField)
 }
-
-document.querySelector(".add-ingredient").addEventListener("click", addIngredient)
-
+if (document.querySelector(".add-ingredient") != null) document.querySelector(".add-ingredient").addEventListener("click", addIngredient)
 
 // Função para adicionar elemento na lista de passos
 function addSteps() {
@@ -202,5 +200,44 @@ function addSteps() {
   ingredients.appendChild(newField)
 }
 
-document.querySelector(".add-steps").addEventListener("click", addSteps)
+if (document.querySelector(".add-steps") != null) document.querySelector(".add-steps").addEventListener("click", addSteps)
+
+// VALIDAR EMAIL
+const Validate = {
+  apply(input, func) {
+    //Limpar a div de tentativas erradas de email
+    Validate.clearErrors(input)
+
+    //Antes de qualquer coisa, ele verifica
+    //se há um error por causa da isEmail(value)
+    let results = Validate[func] (input.value)
+    input.value = results.value
+
+    if(results.error) Validate.displayError(input, results.error)
+
+  },
+
+  displayError(input, error) {
+    const div = document.createElement('div')
+    div.classList.add('error')
+    div.innerHTML = error
+    input.parentNode.appendChild(div)
+    input.focus()
+  },
+
+  clearErrors(input) {
+    const errorDiv = input.parentNode.querySelector(".error")
+    if (errorDiv) errorDiv.remove()
+  },
+
+  isEmail(value) {
+    let error = null
+    // Dúvidas com REGEX? Verifique a documentação no início do código
+    const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+    if(!value.match(mailFormat)) error = "Email inválido!"
+
+    return {error, value}
+  }
+}
 

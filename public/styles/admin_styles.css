@@ -26,6 +26,15 @@ header {
   margin: auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+header .header-content form button {
+  background-color: #111111;
+  font-size: 15px;
+  margin-left: 450px;
+  color: #ffffff;
+  border: none;
 }
 
 .header-content .menu-links {
@@ -61,6 +70,12 @@ header {
   color: #111111;
 }
 
+.create-user-buttons {
+  display: flex;
+  width: 256px;
+  justify-content: space-between;
+}
+
 .buttons {
   background-color: #6558C3;
   border-radius: 4px;
@@ -68,10 +83,18 @@ header {
   height: 37px;
 }
 
+.buttons.user-cancel button {
+  background-color: #8A8A8A;
+  transition: 250ms;
+}
+
+.buttons.user-cancel button:hover {
+  background-color: #DC4747;
+}
+
 .buttons a {
   display: flex;
   font-size: 16px;
-  font-weight: bold;
   color: #FFFFFF;
   align-items: center;
   justify-content: center;
@@ -109,7 +132,7 @@ header {
 
 .chefs-details {
   width: 940px;
-  height: 100%;
+  /* height: 100%; */
   margin: auto;
 }
 
@@ -719,3 +742,55 @@ textarea {
   border-radius: 4px;
 }
 
+/* USERS PAGES */
+.users-grid {
+  display: grid;
+  grid-template-rows: 110px 1fr;
+}
+
+.users-fields {
+  width: 940px;
+  margin: 24px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.users-fields label,
+.inputs-users-create label {
+  font-family: 'Roboto', bold;
+  font-weight: 700;
+  font-size: 16px;
+  color: #111111;
+}
+
+.inputs-users-create input {
+  width: 400px;
+}
+
+.users-isAdmin-field {
+  width: 940px;
+  margin: 24px auto;
+
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+}
+
+input[type="radio"] {
+  width: 16px;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  margin: auto 0;
+}
+
+/* VALIDATE ERRORS */
+
+.input .error {
+  text-align: center;
+  margin-top: 4px;
+  background-color: #e74c3c;
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+}
