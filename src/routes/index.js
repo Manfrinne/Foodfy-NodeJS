@@ -7,16 +7,16 @@ const recipes = require('./recipes')
 const users = require('./users')
 
 //HOME
-routes.use('/home', home)
+routes.use('/public', home)
 
 // CHEFS
-routes.use('/chefs', chefs)
+routes.use('/admin/chefs', chefs)
 
 // RECIPES
-routes.use('/recipes', recipes)
+routes.use('/admin/recipes', recipes)
 
 // USERS
-routes.use('/users', users)
+routes.use('/admin/users', users)
 
 
 module.exports = routes

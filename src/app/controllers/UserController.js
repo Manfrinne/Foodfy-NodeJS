@@ -3,7 +3,7 @@ module.exports = {
 
   create(req, res) {
 
-    return res.render('users/create')
+    return res.render('admin/users/create')
 
   },
 

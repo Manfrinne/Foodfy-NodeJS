@@ -15,11 +15,11 @@ module.exports = {
       src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
     }))
 
-    return res.render('chefs/index', {chefs, files})
+    return res.render('admin/chefs/index', {chefs, files})
   },
 
   create(req, res) {
-    return res.render('chefs/create')
+    return res.render('admin/chefs/create')
   },
 
   async post(req, res) {
@@ -38,7 +38,7 @@ module.exports = {
     const fileId = results.rows[0].id
     await Chef.create(req.body, fileId)
 
-    return res.redirect(`chefs`)
+    return res.redirect(`/admin/chefs`)
   },
 
   async show(req, res) {
@@ -61,7 +61,7 @@ module.exports = {
       src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
     }))
 
-    return res.render("chefs/show", { chef, recipes, photoAvatar, files })
+    return res.render("admin/chefs/show", { chef, recipes, photoAvatar, files })
 
   },
 
@@ -70,7 +70,7 @@ module.exports = {
     let results = await Chef.find(req.params.id)
     const chef = results.rows[0]
 
-    return res.render("chefs/edit", { chef })
+    return res.render("admin/chefs/edit", { chef })
   },
 
   async put(req, res) {
@@ -102,7 +102,7 @@ module.exports = {
 
     }
 
-    return res.redirect(`chefs/${req.body.id}`)
+    return res.redirect(`/admin/chefs/${req.body.id}`)
   },
 
   async delete(req, res) {
@@ -115,6 +115,6 @@ module.exports = {
     } catch(err) {
       console.log(err)
     }
-    return res.redirect('chefs')
+    return res.redirect('/admin/chefs')
   }
 }

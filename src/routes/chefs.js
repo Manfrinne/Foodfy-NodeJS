@@ -12,7 +12,7 @@ routes.post('/', multer.single("photos"), ChefController.post)
 routes.get('/:id', ChefController.show)
 routes.get('/:id/edit', ChefController.edit)
 routes.put('/', multer.single("photos"), ChefController.put)
-routes.delete('/chefs', ChefController.delete)
+routes.delete('/', ChefController.delete)
 
 
 module.exports = routes

@@ -12,14 +12,14 @@
   </div>
 </div>
 
-<form method=POST id="salve" action="/recipes?_method=PUT" enctype="multipart/form-data">
+<form method=POST id="salve" action="/admin/recipes?_method=PUT" enctype="multipart/form-data">
 
-  {% include 'recipes/fields.njk' %}
+  {% include 'admin/recipes/fields.njk' %}
   <input type="hidden" name="id" value={{recipe.id}}>
 
 </form>
 
-<form method="POST" id="delete" action="/recipes?_method=DELETE">
+<form method="POST" id="delete" action="/admin/recipes?_method=DELETE">
   <input type="hidden" name="id" value={{recipe.id}}>
 </form>
 

@@ -33,8 +33,12 @@ header .header-content form button {
   background-color: #111111;
   font-size: 15px;
   margin-left: 450px;
-  color: #ffffff;
+  color: #999999;;
   border: none;
+}
+
+header .header-content form button:hover {
+  color: #ffffff;
 }
 
 .header-content .menu-links {

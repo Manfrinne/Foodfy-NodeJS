@@ -18,7 +18,7 @@ nunjucks.configure('src/app/views', {
 })
 
 routes.use(function (req, res) {
-  return res.status(404).render("not-found")
+  return res.status(404).render("global/not-found")
 })
 
 server.listen(8800, function() {
