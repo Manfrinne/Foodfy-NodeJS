@@ -9,6 +9,7 @@ module.exports = {
 
   async post(req, res) {
 
-    return
+
+    return res.send('CADASTRADO EFETUADO COM SUCESSO!')
   }
 }
