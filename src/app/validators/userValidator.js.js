@@ -26,7 +26,7 @@ async function post(req, res, next) {
 
   if (user) return res.send('USUÁRIO JÁ CADASTRADO!')
 
-  //Check if password match
+  //Send password email to user
 
 
   //if Validation OK

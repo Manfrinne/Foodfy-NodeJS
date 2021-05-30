@@ -1,0 +1,40 @@
+/* USERS PAGES */
+
+.users-manager-cards {
+  width: 940px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 52px;
+}
+
+.user-card .user-manager-name {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #111111;
+}
+
+.user-card .user-manager-email {
+  font-size: 14px;
+  color: #777777;
+}
+
+.user-card .user-manager-actions {
+  letter-spacing: .8px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #6558C3;
+
+  margin-top: 16px;
+}
+
+.user-card .user-manager-actions .button-remove{
+  font-weight: bold;
+  font-size: 14px;
+  color: #F55A5A;
+  margin-left: 16px;
+  border: none;
+  background-color: white;
+}
+

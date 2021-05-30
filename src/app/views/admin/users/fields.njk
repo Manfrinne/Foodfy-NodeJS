@@ -24,12 +24,19 @@
   </div>
 
   <div class="inputs-users-create users-isAdmin-field ">
-    <input
-        type="radio"
-        name="is_admin"
-        value="{{ user.is_admin }}"
-      >
-    <label for="is_admin">Administrador</label>
+  {#   name: 'Rodrigo Menezes',
+  email: 'm4nfrinne@gmail.com',
+  is_admin: 'on' #}
+
+    {% if not user.is_admin %}
+      <input type="radio" id="admin" name="is_admin">
+      <label for="admin">Administrador</label>
+    {% else %}
+      <input type="radio" id="admin" name="is_admin" value="{{user.is_admin}}"
+      {% if user.is_admin == 'true' %} checked {% endif %}>
+      <label for="admin">Administrador</label>
+    {% endif %}
+
   </div>
 </div>
 

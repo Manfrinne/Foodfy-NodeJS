@@ -2,8 +2,7 @@
 <html>
 <head>
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/admin_styles.css">
+  {% include 'admin/parts/styles.njk' %}
   <link rel="icon" href="/assets/favicon.ico">
   <script src="/scripts/admin_script.js" defer></script>
 
@@ -21,7 +20,7 @@
       <div class="menu-links">
         <a href="/admin/recipes">RECEITAS</a>
         <a href="/admin/chefs">CHEFES</a>
-        <a href="/admin/users/create">USUÁRIOS</a>
+        <a href="/admin/users/usersList">USUÁRIOS</a>
       </div>
       <form action='admin/users/logout' method='POST'>
         <button>SAIR</button>

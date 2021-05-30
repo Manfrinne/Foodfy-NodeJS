@@ -9,7 +9,13 @@ module.exports = {
 
   async post(req, res) {
 
+    return res.redirect('/admin/users/usersList')
 
-    return res.send('CADASTRADO EFETUADO COM SUCESSO!')
+  },
+
+  list(req, res) {
+
+    return res.render('admin/users/usersList')
+
   }
 }

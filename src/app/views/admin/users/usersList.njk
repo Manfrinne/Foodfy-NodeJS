@@ -1,0 +1,41 @@
+
+
+{% extends "../layoutAdmin.njk" %}
+
+{% block content %}
+
+<div class="menu usersManager">
+  <h2 class="title">Usuários</h2>
+  <div class="buttons">
+    <a href="create">Novo</a>
+  </div>
+</div>
+
+<section>
+  <div class="users-manager-cards">
+    {% for user in users %}
+
+      <div class="user-card">
+        <div class="user-manager-name">{{user.name}}</div>
+        <div class="user-manager-email">{{user.email}}</div>
+        <div class="user-manager-actions">
+          <a class="button-edit" href="edit">Editar</a>
+          <button type="submit" form="delete" class="button-remove">Remove</button>
+        </div>
+      </div>
+
+      <form method="POST" id="delete" action="/admin/users?_method=DELETE">
+        <input type="hidden" name="id" value={{user.id}}>
+      </form>
+
+    {%else%}
+
+      <h3 style="color: #777; font-size: 14px">Ainda não há usuários cadastrados!</h3>
+
+    {%endfor%}
+
+  </div>
+</section>
+
+
+{% endblock content %}
