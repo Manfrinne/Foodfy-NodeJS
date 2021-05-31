@@ -77,17 +77,19 @@ Crie uma estratégia que quando o administrador criar um usuário novo, **o sis
 - Use a estrutura de rotas que você aprendeu nas aulas, para criar as rotas de **entrar e sair do sistema** (login/logout); **solicitação de recuperação** de senha; gerenciamento de **usuários.**
 - Coloque as rotas de **perfis de usuário** e **gerenciamento de usuários** da seguinte forma
 
-`// Rotas de perfil de um usuário logado
+``` javascript
+// Rotas de perfil de um usuário logado
 routes.get('/admin/profile', ProfileController.index) // Mostrar o formulário com dados do usuário logado
 routes.put('/admin/profile', ProfileController.put)// Editar o usuário logado
 
 // Rotas que o administrador irá acessar para gerenciar usuários
-routes.get('/admin/users', UserController.list) // Mostrar a lista de usuários cadastrados
-routes.post('/admin/users', UserController.post) // Cadastrar um usuário
-routes.get('/admin/users/create', UserController.create) // Mostrar o formulário de criação de um usuário
+routes.get('/admin/users', UserController.list) // Mostrar a lista de usuários cadastrados => OK
+routes.post('/admin/users', UserController.post) // Cadastrar um usuário => OK
+routes.get('/admin/users/create', UserController.create) // Mostrar o formulário de criação de um usuário => OK
 routes.put('/admin/users/:id', UserController.put) // Editar um usuário
 routes.get('/admin/users/:id/edit', UserController.edit) // Mostrar o formulário de edição de um usuário
-routes.delete('/admin/users/:id', UserController.delete) // Deletar um usuário`
+routes.delete('/admin/users/:id', UserController.delete) // Deletar um usuário
+```
 
 ### **Tabelas**
 

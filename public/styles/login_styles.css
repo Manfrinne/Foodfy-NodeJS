@@ -1,0 +1,48 @@
+/* LOGIN PAGES */
+
+.header-users-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 146px;
+}
+
+.header-users-login img {
+  width: 94px;
+  height: 32px;
+}
+
+.user-login-dashboard {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.user-login-dashboard h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.inputs-users-create input {
+  width: 454px;
+  margin-bottom: 35px;
+}
+
+.user-login-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 150px;
+}
+
+.user-login-button a {
+  font-size: 16px;
+  color: #969696;
+}
+
+.user-login-button a:hover {
+  transition: 200ms ease-in-out;
+  font-weight: 600;
+  color: #111111;
+}
+
