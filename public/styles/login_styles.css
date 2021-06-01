@@ -35,6 +35,13 @@
   padding-bottom: 150px;
 }
 
+.user-forgot-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 150px;
+}
+
 .user-login-button a {
   font-size: 16px;
   color: #969696;

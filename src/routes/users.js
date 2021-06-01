@@ -14,5 +14,8 @@ routes.get('/usersList', UserController.list) // Mostrar a lista de usuários ca
 // LOGIN/LOGOUT
 routes.get('/login', SessionController.loginForm)
 
+// RESET PASSWORD/FORGOT
+routes.get('/forgot-password', SessionController.forgotForm)
+
 
 module.exports = routes
