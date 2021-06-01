@@ -17,5 +17,7 @@ routes.get('/login', SessionController.loginForm)
 // RESET PASSWORD/FORGOT
 routes.get('/forgot-password', SessionController.forgotForm)
 
+routes.get('/password-reset', SessionController.resetForm)
+
 
 module.exports = routes
