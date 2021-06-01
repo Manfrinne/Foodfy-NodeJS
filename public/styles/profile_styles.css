@@ -1,0 +1,12 @@
+/* PROFILE USERS PAGES */
+
+.profile-user-buttons {
+  display: flex;
+  width: 256px;
+  justify-content: flex-end;
+}
+
+#profile-users-field {
+  width: 940px;
+  margin: 24px auto;
+}

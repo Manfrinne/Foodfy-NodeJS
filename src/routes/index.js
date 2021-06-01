@@ -17,6 +17,7 @@ routes.use('/admin/recipes', recipes)
 
 // USERS
 routes.use('/admin/users', users)
+routes.use('/admin/profile', users)
 
 // ALIAS
 routes.get('/', function(req, res) {
@@ -25,6 +26,10 @@ routes.get('/', function(req, res) {
 
 routes.get('/accounts', function(req, res) {
   return res.redirect('/admin/users/login')
+})
+
+routes.get('/profile', function(req, res) {
+  return res.redirect('/admin/profile')
 })
 
 

@@ -3,7 +3,7 @@ module.exports = {
 
   index(req, res) {
 
-    return
+    return res.render('admin/users/index')
 
   }
 }

@@ -4,7 +4,8 @@
     <div class="inputs-users-create">
         <label for="name">Nome</label>
         <div class="input">
-          <input type="text" name="name" placeholder="Digite o nome do usuário" value="{{ user.name }}">
+          {# <input type="text" name="name" placeholder="Digite o nome do usuário" value="{{ user.name }}"> #}
+           <input type="text" name="name" placeholder="Digite o nome do usuário" value="Manfrinne Ferreira">
         </div>
     </div>
 
@@ -15,7 +16,8 @@
             type="email"
             name="email"
             placeholder="Digite seu email"
-            value="{{ user.email }}"
+            {# value="{{ user.email }}" #}
+            value="manfrinne@gmail.com"
             onblur="Validate.apply(this, 'isEmail')"
           >
         </div>
@@ -23,21 +25,6 @@
 
   </div>
 
-  <div class="inputs-users-create users-isAdmin-field ">
-  {#   name: 'Rodrigo Menezes',
-  email: 'm4nfrinne@gmail.com',
-  is_admin: 'on' #}
-
-    {% if not user.is_admin %}
-      <input type="radio" id="admin" name="is_admin">
-      <label for="admin">Administrador</label>
-    {% else %}
-      <input type="radio" id="admin" name="is_admin" value="{{user.is_admin}}"
-      {% if user.is_admin == 'true' %} checked {% endif %}>
-      <label for="admin">Administrador</label>
-    {% endif %}
-
-  </div>
 </div>
 
 
