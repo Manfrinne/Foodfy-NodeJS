@@ -13,7 +13,35 @@
 
 <section>
   <div class="users-manager-cards">
-    {% for user in users %}
+
+      <div class="user-card">
+        <div class="user-manager-name">Manfrinne Ferreira</div>
+        <div class="user-manager-email">manfrinne@gmail.com</div>
+        <div class="user-manager-actions">
+          <a class="button-edit" href="edit">Editar</a>
+          <button type="submit" form="delete" class="button-remove">Remove</button>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-manager-name">Manfrinne Ferreira</div>
+        <div class="user-manager-email">manfrinne@gmail.com</div>
+        <div class="user-manager-actions">
+          <a class="button-edit" href="edit">Editar</a>
+          <button type="submit" form="delete" class="button-remove">Remove</button>
+        </div>
+      </div>
+
+      <div class="user-card">
+        <div class="user-manager-name">Manfrinne Ferreira</div>
+        <div class="user-manager-email">manfrinne@gmail.com</div>
+        <div class="user-manager-actions">
+          <a class="button-edit" href="edit">Editar</a>
+          <button type="submit" form="delete" class="button-remove">Remove</button>
+        </div>
+      </div>
+
+    {# {% for user in users %}
 
       <div class="user-card">
         <div class="user-manager-name">{{user.name}}</div>
@@ -32,7 +60,7 @@
 
       <h3 style="color: #777; font-size: 14px">Ainda não há usuários cadastrados!</h3>
 
-    {%endfor%}
+    {%endfor%} #}
 
   </div>
 </section>

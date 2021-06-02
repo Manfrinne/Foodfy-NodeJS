@@ -5,25 +5,18 @@
 {% block content %}
 
 <div class="menu">
-  <h2 class="title">Criar Usuário</h2>
-  <div class="create-user-buttons">
-      <div class="buttons">
-        <button type="submit" form="create">Salvar</button>
-      </div>
-      <div class="user-cancel buttons">
-        <button type="button"><a href="create">Cancelar</a></button>
-      </div>
+  <h2 class="title">Atualizar Usuário</h2>
+  <div class="buttons-edit-page">
+    <button type="submit" form="delete" class="delete-button">Deletar</button>
+    <button type="submit" form="update-user">Salvar</button>
   </div>
 </div>
 
-<form method="GET" id="create" action="/admin/users/login">
+<form method="GET" id="update-user" action="/admin/users/usersList">
 
   {% include 'admin/users/fields.njk' %}
 
   <div class="inputs-users-create users-isAdmin-field ">
-    {#   name: 'Rodrigo Menezes',
-    email: 'm4nfrinne@gmail.com',
-    is_admin: 'on' #}
 
     {% if not user.is_admin %}
       <input type="radio" id="admin" name="is_admin">

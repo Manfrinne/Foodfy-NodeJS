@@ -53,3 +53,10 @@
   color: #111111;
 }
 
+.users-login-fields label,
+.inputs-users-login label {
+  font-family: 'Roboto', bold;
+  font-weight: 700;
+  font-size: 16px;
+  color: #111111;
+}

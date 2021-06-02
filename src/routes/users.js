@@ -23,5 +23,8 @@ routes.get('/password-reset', SessionController.resetForm)
 // Rotas de perfil de um usuário logado
 routes.get('/', ProfileController.index) // Mostrar o formulário com dados do usuário logado
 
+// routes.get('/admin/users/:id/edit', UserController.edit) // Mostrar o formulário de edição de um usuário
+routes.get('/edit', UserController.edit) // Mostrar o formulário de edição de um usuário
+
 
 module.exports = routes

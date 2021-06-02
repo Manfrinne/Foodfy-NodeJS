@@ -17,5 +17,11 @@ module.exports = {
 
     return res.render('admin/users/usersList')
 
+  },
+
+  edit(req, res) {
+
+    return res.render('admin/users/edit')
+
   }
 }
