@@ -3,7 +3,6 @@ const routes = express.Router()
 
 const UserController = require('../app/controllers/UserController')
 const SessionController = require('../app/controllers/SessionController')
-const ProfileController = require('../app/controllers/ProfileController')
 
 const UserValidator = require('../app/validators/userValidator.js')
 
@@ -20,7 +19,7 @@ routes.get('/forgot-password', SessionController.forgotForm)
 routes.get('/password-reset', SessionController.resetForm)
 
 // Rotas de perfil de um usuário logado
-routes.get('/', ProfileController.index) // Mostrar o formulário com dados do usuário logado
+routes.get('/', UserController.show) // Mostrar o formulário com dados do usuário logado
 
 // routes.get('/admin/users/:id/edit', UserController.edit) // Mostrar o formulário de edição de um usuário
 routes.get('/edit', UserController.edit) // Mostrar o formulário de edição de um usuário

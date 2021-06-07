@@ -62,5 +62,13 @@ module.exports = {
     } catch(err) {
       console.error(err)
     }
+  },
+
+  all() {
+    return db.query(`
+      SELECT * FROM users
+      ORDER BY updated_at DESC
+    `)
   }
+
 }

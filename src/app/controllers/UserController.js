@@ -19,15 +19,24 @@ module.exports = {
 
   },
 
-  list(req, res) {
+  async list(req, res) {
 
-    return res.render('admin/users/usersList')
+    const results = await User.all()
+    const users = results.rows
+
+    return res.render('admin/users/usersList', { users })
 
   },
 
   edit(req, res) {
 
     return res.render('admin/users/edit')
+
+  },
+
+  async show(req, res) {
+
+    return res.render('admin/users/show')
 
   }
 }
