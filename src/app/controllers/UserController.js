@@ -1,3 +1,4 @@
+const User = require('../models/User')
 
 module.exports = {
 
@@ -8,6 +9,11 @@ module.exports = {
   },
 
   async post(req, res) {
+
+    //Storage user data in the database
+    const userId = await User.create(req.body)
+
+    req.session.userId = userId
 
     return res.redirect('/admin/users/usersList')
 

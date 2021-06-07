@@ -36,9 +36,9 @@ CREATE TABLE "users" (
   "name" text NOT NULL,
   "email" text UNIQUE NOT NULL,
   "password" text NOT NULL,
+  "is_admin" BOOLEAN DEFAULT false,
   "reset_token" text,
   "reset_token_expires" text,
-  "is_admin" BOOLEAN DEFAULT false,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
 );
@@ -47,7 +47,7 @@ CREATE TABLE "users" (
 ALTER TABLE "recipes" ADD COLUMN user_id int;
 ALTER TABLE "recipes" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 
--- ######## FUNCTION PARA ATUALIZAR updated_at ##########
+--FUNCTION PARA ATUALIZAR updated_at
 
 CREATE FUNCTION foodfy_trigger_set_timestamp()
 RETURNS TRIGGER AS $$
@@ -61,3 +61,15 @@ CREATE TRIGGER set_timestamp
 BEFORE UPDATE ON recipes
 FOR EACH ROW
 EXECUTE PROCEDURE foodfy_trigger_set_timestamp();
+
+--CONNECT PG SIMPLE TABLE
+CREATE TABLE "session" (
+  "sid" varchar NOT NULL COLLATE "default",
+	"sess" json NOT NULL,
+	"expire" timestamp(6) NOT NULL
+)
+WITH (OIDS=FALSE);
+
+ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+
+CREATE INDEX "IDX_session_expire" ON "session" ("expire");

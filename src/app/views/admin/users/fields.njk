@@ -4,8 +4,7 @@
     <div class="inputs-users-create">
         <label for="name">Nome</label>
         <div class="input">
-          {# <input type="text" name="name" placeholder="Digite o nome do usuário" value="{{ user.name }}"> #}
-           <input type="text" name="name" placeholder="Digite o nome do usuário" value="Manfrinne Ferreira">
+          <input type="text" name="name" placeholder="Digite o nome do usuário" value="{{ user.name }}">
         </div>
     </div>
 
@@ -16,8 +15,7 @@
             type="email"
             name="email"
             placeholder="Digite seu email"
-            {# value="{{ user.email }}" #}
-            value="manfrinne@gmail.com"
+            value="{{ user.email }}"
             onblur="Validate.apply(this, 'isEmail')"
           >
         </div>

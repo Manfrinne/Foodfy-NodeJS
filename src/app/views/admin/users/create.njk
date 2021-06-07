@@ -16,14 +16,16 @@
   </div>
 </div>
 
-<form method="GET" id="create" action="/admin/users/login">
+<form method="POST" id="create" action="/admin/users/create">
 
   {% include 'admin/users/fields.njk' %}
 
   <div class="inputs-users-create users-isAdmin-field ">
-    {#   name: 'Rodrigo Menezes',
+    {#--------------------
+    name: 'Rodrigo Menezes',
     email: 'm4nfrinne@gmail.com',
-    is_admin: 'on' #}
+    is_admin: 'on'
+    ---------------------#}
 
     {% if not user.is_admin %}
       <input type="radio" id="admin" name="is_admin">

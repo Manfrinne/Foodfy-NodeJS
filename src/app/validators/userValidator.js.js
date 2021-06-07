@@ -1,20 +1,13 @@
 const User = require('../models/User')
 
-function checkAllFields(body) {
-  const keys = Object.keys(body)
-  for (key of keys) {
-    if (body[key] == "") {
-      return res.send('FILL ALL FIELDS!')
-    }
-  }
-}
-
 async function post(req, res, next) {
 
   //Check if has all fields
-  const fillAllFields = checkAllFields(req.body)
-  if (fillAllFields) {
-    return fillAllFields
+  const keys = Object.keys(req.body)
+  for (key of keys) {
+    if (req.body[key] == "") {
+      return res.send('PREENCHER TODOS OS CAMPOS!')
+    }
   }
 
   //Check if user exists [email]
@@ -25,8 +18,6 @@ async function post(req, res, next) {
   })
 
   if (user) return res.send('USUÁRIO JÁ CADASTRADO!')
-
-  //Send password email to user
 
 
   //if Validation OK
