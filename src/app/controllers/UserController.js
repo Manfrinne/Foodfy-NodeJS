@@ -28,15 +28,46 @@ module.exports = {
 
   },
 
-  edit(req, res) {
+  async edit(req, res) {
 
-    return res.render('admin/users/edit')
+    const {id} = req.params
+
+    const user = await User.findOne({ where: {id} })
+
+    return res.render('admin/users/edit', { user })
+
+  },
+
+  async update(req, res) {
+
+    try {
+
+      let {id, name, email} = req.body
+
+      await User.update(id, { name, email })
+
+      return res.render('admin/users/edit', {
+        user: req.body,
+        success: 'Usuário modificado com sucesso!'
+      })
+
+    } catch(err) {
+
+      console.error(err)
+      return res.render('admin/users/edit', {
+        user: req.body,
+        error: 'Sorry! Algo deu errado...!'
+      })
+
+    }
 
   },
 
   async show(req, res) {
 
-    return res.render('admin/users/show')
+    const { user } = req
+
+    return res.render('admin/users/show', { user })
 
   }
 }

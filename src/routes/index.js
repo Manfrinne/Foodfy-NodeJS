@@ -24,7 +24,7 @@ routes.get('/', function(req, res) {
   return res.redirect('/public')
 })
 
-routes.get('/accounts', function(req, res) {
+routes.get('/admin', function(req, res) {
   return res.redirect('/admin/users/login')
 })
 

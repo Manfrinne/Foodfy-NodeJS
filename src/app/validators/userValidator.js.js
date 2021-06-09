@@ -37,6 +37,22 @@ async function post(req, res, next) {
   next()
 }
 
+async function show(req, res, next) {
+
+  const { userId: id } = req.session
+
+  const user = await User.findOne({ where: {id} })
+
+  if (!user) return res.render('/users/register', {
+    error: "Usuário não encontrado!"
+  })
+
+  req.user = user
+
+  next()
+}
+
 module.exports = {
-  post
+  post,
+  show
 }

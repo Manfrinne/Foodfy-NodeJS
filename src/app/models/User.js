@@ -69,6 +69,28 @@ module.exports = {
       SELECT * FROM users
       ORDER BY updated_at DESC
     `)
-  }
+  },
+
+  async update(id, fields) {
+    let query = "UPDATE users SET"
+
+    Object.keys(fields).map((key, index, array) => {
+      if((index + 1) < array.length) {
+        query = `${query}
+          ${key} = '${fields[key]}',
+        `
+      } else {  // Last iteration (without ',')
+
+        query = `${query}
+          ${key} = '${fields[key]}'
+          WHERE id = ${id}
+        `
+      }
+    })
+
+    await db.query(query)
+
+    return
+  },
 
 }

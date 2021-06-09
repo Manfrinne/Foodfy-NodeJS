@@ -2,22 +2,22 @@
   <div class="users-login-fields">
 
     <div class="inputs-users-login">
-        <label for="name">Nome</label>
-        <div class="input">
-          <input type="text" name="name" placeholder="Digite o nome do usuário" value="{{ user.name }}">
-        </div>
+      <label for="email">Email</label>
+      <div class="input">
+        <input
+          type="email"
+          name="email"
+          placeholder="Digite seu email"
+          value="{{ user.email }}"
+          onblur="Validate.apply(this, 'isEmail')"
+        >
+      </div>
     </div>
 
     <div class="inputs-users-login">
-        <label for="email">Email</label>
+        <label for="password">Senha</label>
         <div class="input">
-          <input
-            type="email"
-            name="email"
-            placeholder="Digite seu email"
-            value="{{ user.email }}"
-            onblur="Validate.apply(this, 'isEmail')"
-          >
+          <input type="password" name="password" placeholder="Digite sua senha">
         </div>
     </div>
 
