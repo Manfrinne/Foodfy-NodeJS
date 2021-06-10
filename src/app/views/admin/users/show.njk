@@ -8,14 +8,15 @@
   <h2 class="title">Bem vindo {{user.name}}</h2>
   <div class="profile-user-buttons">
       <div class="buttons">
-        <button type="submit" form="create">Salvar</button>
+        <button type="submit" form="user-update">Salvar</button>
       </div>
   </div>
 </div>
 
-<form method="GET" id="create" action="/admin/users/edit">
+<form method="POST" id="user-update" action="/admin/profile?_method=PUT">
 
   {% include 'admin/users/fields.njk' %}
+  <input type="hidden" name="id" value={{user.id}}>
 
   <div class="inputs-users-create" id="profile-users-field">
       <label for="password">Senha</label>

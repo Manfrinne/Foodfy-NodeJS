@@ -1,6 +1,7 @@
 const crypto = require('crypto')
 const db = require('../../config/db')
 const mailer = require('../../lib/mailer')
+const { hash } = require('bcryptjs')
 
 module.exports = {
   async findOne(filters) {
@@ -37,10 +38,14 @@ module.exports = {
       //Generate aleatore password
       const password = crypto.randomBytes(8).toString("hex")
 
+      //Hash of password
+      const passwordHash = await hash(password, 8)
+
+
       const values = [
         data.name,
         data.email,
-        password,
+        passwordHash,
         data.is_admin
       ]
 

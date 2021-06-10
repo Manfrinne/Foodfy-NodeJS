@@ -42,9 +42,39 @@ module.exports = {
 
     try {
 
-      let {id, name, email} = req.body
+      const { user } = req
 
-      await User.update(id, { name, email })
+      let {name, email} = req.body
+
+      await User.update(user.id, { name, email })
+
+      return res.render('admin/users/show', {
+        user: req.body,
+        success: 'Usuário modificado com sucesso!'
+      })
+
+    } catch(err) {
+
+      console.error(err)
+
+      return res.render('admin/users/show', {
+        user: req.body,
+        error: 'Sorry! Algo deu errado...!'
+      })
+
+    }
+
+  },
+
+  async updateAdmin(req, res) {
+
+    try {
+
+      const { user } = req
+
+      let {name, email} = req.body
+
+      await User.update(user.id, { name, email })
 
       return res.render('admin/users/edit', {
         user: req.body,
@@ -54,7 +84,8 @@ module.exports = {
     } catch(err) {
 
       console.error(err)
-      return res.render('admin/users/edit', {
+
+      return res.render('admin/users/show', {
         user: req.body,
         error: 'Sorry! Algo deu errado...!'
       })

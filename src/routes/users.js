@@ -15,8 +15,7 @@ routes.get('/usersList', UserController.list) // Mostrar a lista de usuários ca
 
 // USER EDIT - ADMIN
 routes.get('/:id/edit', UserController.edit) // Mostrar o formulário de edição de um usuário
-routes.put('/', UserController.update) // Editar um usuário
-
+routes.put('/', UserValidator.updateAdmin, UserController.updateAdmin) // Editar um usuário
 
 // LOGIN/LOGOUT
 routes.get('/login', SessionController.loginForm)
@@ -27,11 +26,5 @@ routes.post('/login',  SessionValidator.login, SessionController.login)
 // RESET PASSWORD/FORGOT
 routes.get('/forgot-password', SessionController.forgotForm)
 routes.get('/password-reset', SessionController.resetForm)
-
-
-// Rotas de perfil de um usuário logado
-routes.get('/', UserValidator.show, UserController.show) // Mostrar o formulário com dados do usuário logado
-
-
 
 module.exports = routes

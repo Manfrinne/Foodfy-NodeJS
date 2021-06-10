@@ -5,6 +5,7 @@ const home = require('./home')
 const chefs = require('./chefs')
 const recipes = require('./recipes')
 const users = require('./users')
+const profile = require('./profile.js')
 
 //HOME
 routes.use('/public', home)
@@ -17,7 +18,8 @@ routes.use('/admin/recipes', recipes)
 
 // USERS
 routes.use('/admin/users', users)
-routes.use('/admin/profile', users)
+
+routes.use('/admin/profile', profile)
 
 // ALIAS
 routes.get('/', function(req, res) {
@@ -26,10 +28,6 @@ routes.get('/', function(req, res) {
 
 routes.get('/admin', function(req, res) {
   return res.redirect('/admin/users/login')
-})
-
-routes.get('/profile', function(req, res) {
-  return res.redirect('/admin/profile')
 })
 
 

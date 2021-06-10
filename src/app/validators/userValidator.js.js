@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const { compare } = require('bcryptjs')
 
 function checkAllFields(body) {
   const keys = Object.keys(body)
@@ -43,7 +44,7 @@ async function show(req, res, next) {
 
   const user = await User.findOne({ where: {id} })
 
-  if (!user) return res.render('/users/register', {
+  if (!user) return res.render('admin/users/show', {
     error: "Usuário não encontrado!"
   })
 
@@ -52,7 +53,49 @@ async function show(req, res, next) {
   next()
 }
 
+async function update(req, res, next) {
+
+  const { id, password } = req.body
+  const user = await User.findOne({ where: {id} })
+
+  //Check if has all fields
+  const fillAllFields = checkAllFields(req.body)
+  if (fillAllFields) {
+    return res.render('admin/users/show', fillAllFields)
+  }
+
+  //Check if password match
+  const passed = await compare(password, user.password)
+
+  if (!passed) return res.render('admin/users/show', {
+    user: req.body,
+    error: 'Senha incorreta!'
+  })
+
+  req.user = user
+
+  next()
+}
+
+async function updateAdmin(req, res, next) {
+
+  const { id } = req.body
+  const user = await User.findOne({ where: {id} })
+
+  //Check if has all fields
+  const fillAllFields = checkAllFields(req.body)
+  if (fillAllFields) {
+    return res.render('admin/users/show', fillAllFields)
+  }
+
+  req.user = user
+
+  next()
+}
+
 module.exports = {
   post,
-  show
+  show,
+  update,
+  updateAdmin
 }
