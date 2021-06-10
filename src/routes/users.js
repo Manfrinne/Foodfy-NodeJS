@@ -25,6 +25,8 @@ routes.post('/login',  SessionValidator.login, SessionController.login)
 
 // RESET PASSWORD/FORGOT
 routes.get('/forgot-password', SessionController.forgotForm)
+routes.post('/forgot-password', SessionValidator.forgot, SessionController.forgot)
+
 routes.get('/password-reset', SessionController.resetForm)
 
 module.exports = routes
