@@ -41,6 +41,8 @@ module.exports = {
       return res.send("Favor carregar ao menos uma imagem!")
     }
 
+    req.body.user_id = req.session.userId
+
     let results = await Recipe.create(req.body)
     const recipesId = results.rows[0].id
 

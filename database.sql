@@ -21,6 +21,7 @@ CREATE TABLE "recipes" (
   "preparation" text[],
   "information" text,
   "chef_id" int,
+  "user_id" int,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
 );
@@ -42,10 +43,6 @@ CREATE TABLE "users" (
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
 );
-
---FOREIGN KEY USERS
-ALTER TABLE "recipes" ADD COLUMN user_id int;
-ALTER TABLE "recipes" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 
 --FUNCTION PARA ATUALIZAR updated_at
 
@@ -73,3 +70,11 @@ WITH (OIDS=FALSE);
 ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
 
 CREATE INDEX "IDX_session_expire" ON "session" ("expire");
+
+-- CASCADE EFFECT WHEN DELETE USER AND RECIPES
+ALTER TABLE "recipes"
+DROP CONSTRAINT recipes_user_id_fkey,
+ADD CONSTRAINT recipes_user_id_fkey
+FOREIGN KEY ("user_id")
+REFERENCES "users" ("id")
+ON DELETE CASCADE;

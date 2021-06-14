@@ -93,9 +93,21 @@ async function updateAdmin(req, res, next) {
   next()
 }
 
+async function deleteUsers(req, res, next) {
+  //comparar o id da sessão com o id do req.body
+  const { userId: id } = req.session
+  const user = await User.findOne({ where: {id} })
+
+  //Se for o mesmo, não permitir a exclusão do user
+  if (user.id == req.body.id) return res.send('VOCÊ NÂO PODE DELETAR SUA PRÓPRIA CONTA!')
+
+  next()
+}
+
 module.exports = {
   post,
   show,
   update,
-  updateAdmin
+  updateAdmin,
+  deleteUsers
 }

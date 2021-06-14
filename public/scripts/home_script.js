@@ -11,12 +11,12 @@ for (let card of cards) {
         if (currentPage.includes('recipes')) {
           window.location.href = `recipes/${urlID}`
         } else {
-          window.location.href = `users/recipes/${urlID}`
+          window.location.href = `public/recipes/${urlID}`
         }
     });
 };
 
-// End ONCLICK IN CARD - Change for users/recipe
+
 // Function for change images in Gallery users/recipe
 const ImageGallery = {
   highlight: document.querySelector(".gallery .highlight > img"),

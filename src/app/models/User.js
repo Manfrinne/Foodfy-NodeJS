@@ -2,6 +2,8 @@ const crypto = require('crypto')
 const db = require('../../config/db')
 const mailer = require('../../lib/mailer')
 const { hash } = require('bcryptjs')
+const Recipe = require('../models/Recipe')
+const File = require('../models/file')
 
 module.exports = {
   async findOne(filters) {
@@ -98,4 +100,34 @@ module.exports = {
     return
   },
 
+  async delete(id) {
+
+    //Segregar todos as receitas do usuária
+    let results = await db.query(`SELECT * FROM recipes WHERE user_id = $1`, [id])
+    const recipes = results.rows
+
+    //Segregar todas imagens das receitas do usuário
+    const allFilesPromiseDB = recipes.map(recipe => Recipe.files(recipe.id))
+    let promiseResultsDB = await Promise.all(allFilesPromiseDB)
+
+    promiseResultsDB.map(results => {
+      results.rows.map(file => {
+        try {
+          File.delete(file.id)
+        } catch(err) {
+          console.error(err)
+        }
+      })
+    })
+
+    //Executar a remoção do usuário, produtos e imagens no db
+    await db.query('DELETE FROM users WHERE id = $1', [id])
+  },
+
+  async userRecipes(userId) {
+
+    //Segregar todos as receitas do usuária
+    return await db.query(`SELECT * FROM recipes WHERE user_id = $1`, [userId])
+
+  }
 }
