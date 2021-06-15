@@ -11,9 +11,7 @@ module.exports = {
   async post(req, res) {
 
     //Storage user data in the database
-    const userId = await User.create(req.body)
-
-    req.session.userId = userId
+    await User.create(req.body)
 
     return res.redirect('/admin/users/usersList')
 
@@ -100,5 +98,30 @@ module.exports = {
 
     return res.render('admin/users/show', { user })
 
+  },
+
+  async delete(req, res) {
+
+    try {
+
+      await User.delete(req.body.id)
+
+      const results = await User.all()
+      const users = results.rows
+
+      return res.render('admin/users/usersList', {
+        users,
+        success: 'Conta deletada com sucesso!'
+      })
+
+    } catch(err) {
+
+      console.error(err)
+      return res.render('admin/users/usersList', {
+        user: req.body,
+        error: 'Erro ao tentar deletar a conta! Tente novamente'
+      })
+
+    }
   }
 }

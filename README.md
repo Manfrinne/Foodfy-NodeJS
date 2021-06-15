@@ -37,8 +37,6 @@
 
 5 - Crie um banco de dados de acordo com o arquivo na raiz do projeto `database.sql`; lembre-se que esse arquivo deve estar de acordo com as especificações determinadas no arquivo `./src/config/db.js`.
 
-7 - Crie uma pasta `public/images` para armazenar as imagens localmente;
-
 6 - Execute `npm start` para rodar o projeto.
 
 ## **🚀 Sobre o desafio**

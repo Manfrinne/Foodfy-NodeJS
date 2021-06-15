@@ -26,13 +26,7 @@ module.exports = {
       results = await Recipe.all()
       const totalRecipes = results.rows
 
-      let recipes = []
-      // Para apresentar apanas 6 receitas na home page
-      for (i = 0; i < 6; i++) {
-        recipes.push(totalRecipes[i])
-      }
-
-      if (!recipes[0]) recipes = []
+      const recipes = totalRecipes.filter((totalRecipes, index) => index > 5 ? false : true)
 
       return res.render('public/home/index', { recipes, files })
 

@@ -21,6 +21,7 @@
 }
 
 .user-card .user-manager-actions {
+  display: flex;
   letter-spacing: .8px;
   font-weight: bold;
   font-size: 14px;

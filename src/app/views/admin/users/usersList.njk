@@ -20,18 +20,22 @@
         <div class="user-manager-name">{{user.name}}</div>
         <div class="user-manager-email">{{user.email}}</div>
         <div class="user-manager-actions">
+
           <a class="button-edit" href="{{user.id}}/edit">Editar</a>
-          <button type="submit" form="delete" class="button-remove">Remove</button>
+          {# <button type="submit" class="button-remove">Remove</button>preciso resolver problemas do id do usuário #}
+
+          <form method='POST' action='/admin/users?_method=DELETE' id='form-delete'>
+            <input type='hidden' name='id' value={{user.id}}>
+            <button class="button-remove" type='submit'>Remover</button>
+          </form>
+
         </div>
 
-        <form method="POST" id="delete" action="/admin/users?_method=DELETE">
-          <input type="hidden" name="id" value={{user.id}}>
-        </form>
       </div>
 
     {%else%}
 
-      <h3 style="color: #777; font-size: 14px">Ainda não há usuários cadastrados!</h3>
+      <h3 style="color: #777; font-size: 14px">Ainda não há usuzários cadastrados!</h3>
 
     {%endfor%}
 

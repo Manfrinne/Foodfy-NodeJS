@@ -20,11 +20,6 @@
   {% include 'admin/users/fields.njk' %}
 
   <div class="inputs-users-create users-isAdmin-field ">
-    {#--------------------
-    name: 'Rodrigo Menezes',
-    email: 'm4nfrinne@gmail.com',
-    is_admin: 'on'
-    ---------------------#}
 
     {% if not user.is_admin %}
       <input type="radio" id="admin" name="is_admin">
