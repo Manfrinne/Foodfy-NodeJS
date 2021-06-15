@@ -22,6 +22,7 @@
         <div class="user-manager-actions">
 
           <a class="button-edit" href="{{user.id}}/edit">Editar</a>
+<<<<<<< HEAD
           {# <button type="submit" class="button-remove">Remove</button>preciso resolver problemas do id do usuário #}
 
           <form method='POST' action='/admin/users?_method=DELETE' id='form-delete'>
@@ -31,6 +32,13 @@
 
         </div>
 
+=======
+          <button type="submit" class="button-remove">Remove</button>{# preciso resolver problemas do id do usuário #}
+        </div>
+
+        <input type="hidden" name="id" value={{user.id}}>
+
+>>>>>>> bc4df659152e04cf933da177bff196946650bf31
       </div>
 
     {%else%}

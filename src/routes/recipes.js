@@ -19,9 +19,15 @@ routes.get('/:id', RecipeController.show)
 
 routes.get('/:id/edit', userRecipesVerification, RecipeController.edit)
 
+<<<<<<< HEAD
 routes.put('/', multer.array("photos", 5), RecipeController.put)
 
 routes.delete('/', RecipeController.delete)
+=======
+routes.put('/', userRecipesVerification, multer.array("photos", 5), RecipeController.put)
+
+routes.delete('/', userRecipesVerification, RecipeController.delete)
+>>>>>>> bc4df659152e04cf933da177bff196946650bf31
 
 
 module.exports = routes

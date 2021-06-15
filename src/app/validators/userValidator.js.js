@@ -99,6 +99,7 @@ async function deleteUsers(req, res, next) {
   const user = await User.findOne({ where: {id} })
 
   //Se for o mesmo, não permitir a exclusão do user
+<<<<<<< HEAD
   if (user.id == req.body.id) {
 
     return res.render('admin/users/edit', {
@@ -107,6 +108,9 @@ async function deleteUsers(req, res, next) {
     })
 
   }
+=======
+  if (user.id == req.body.id) return res.send('VOCÊ NÂO PODE DELETAR SUA PRÓPRIA CONTA!')
+>>>>>>> bc4df659152e04cf933da177bff196946650bf31
 
   next()
 }
