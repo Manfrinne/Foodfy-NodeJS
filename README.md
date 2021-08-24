@@ -1,4 +1,3 @@
-
 <h3 align="center">
   Desafio 10: Sistema de Login Foodfy
 </h3>
@@ -23,6 +22,8 @@
   <li>Express</li>
   <li>Nunjucks</li>
   <li>PostgreSQL</li>
+  <li>NodeMailer</li>   <!-- Use "https://mailtrap.io/" para testar -->
+  <li>Lottie</li>
  </ul>
 
 ### Rodando o projeto:
@@ -51,15 +52,15 @@ Você deve criar a parte de **autenticação de usuários** no Foodfy, onde *
 
 - A partir de agora, somente usuários cadastrados poderão ter acesso às rotas `/admin`
 - O usuário que tiver o valor de `true` no campo `is_admin` da tabela `users` será considerado o **administrador do sistema** e:
-    - Poderá criar/editar/deletar **qualquer** usuário, receita e chef
-    - **Somente este** poderá cadastrar/atualizar/deletar os chefs
-    - **Somente este** poderá cadastrar outros usuários
-    - **Não poderá** deletar sua própria conta
+  - Poderá criar/editar/deletar **qualquer** usuário, receita e chef
+  - **Somente este** poderá cadastrar/atualizar/deletar os chefs
+  - **Somente este** poderá cadastrar outros usuários
+  - **Não poderá** deletar sua própria conta
 - Um usuário comum **não pode**
-    - Editar ou deletar as **receitas** de outro usuário
-    - Editar ou deletar outros **usuários**
-    - Criar, editar ou deletar **chefs**
-    - Deletar sua própria conta.
+  - Editar ou deletar as **receitas** de outro usuário
+  - Editar ou deletar outros **usuários**
+  - Criar, editar ou deletar **chefs**
+  - Deletar sua própria conta.
 - **As listagem** de receitas e chefs continuam **acessíveis a todos**, tanto para usuários do sistema como para visitantes do site. (criar uma tela de acesso aberto para ver os chefs do Foodfy)
 
 A partir disso, **cuidado com os botões de acesso** que existem no site e na área administrativa, bem como com as rotas do site.
@@ -68,25 +69,25 @@ Crie uma estrutura de proteção para impedir o acesso a **usuários não auten
 
 Crie uma estrutura de proteção para impedir que os usuários que estão autenticados**, mas não são administradores**, não tenham permissão de acesso a certas rotas, conforme as instruções acima.
 
-Crie uma estratégia que quando o administrador criar um usuário novo, **o sistema irá criar uma senha** aleatória e enviar por email ao usuário criado. **DICA***: Use a estratégia de criação de TOKEN que você viu nas aulas*.
+Crie uma estratégia que quando o administrador criar um usuário novo, **o sistema irá criar uma senha** aleatória e enviar por email ao usuário criado. **DICA\***: Use a estratégia de criação de TOKEN que você viu nas aulas\*.
 
 ### **Rotas**
 
 - Use a estrutura de rotas que você aprendeu nas aulas, para criar as rotas de **entrar e sair do sistema** (login/logout); **solicitação de recuperação** de senha; gerenciamento de **usuários.**
 - Coloque as rotas de **perfis de usuário** e **gerenciamento de usuários** da seguinte forma
 
-``` javascript
+```javascript
 // Rotas de perfil de um usuário logado
-routes.get('/admin/profile', ProfileController.index) // Mostrar o formulário com dados do usuário logado
-routes.put('/admin/profile', ProfileController.put)// Editar o usuário logado
+routes.get("/admin/profile", ProfileController.index); // Mostrar o formulário com dados do usuário logado
+routes.put("/admin/profile", ProfileController.put); // Editar o usuário logado
 
 // Rotas que o administrador irá acessar para gerenciar usuários
-routes.get('/admin/users', UserController.list) // Mostrar a lista de usuários cadastrados => OK
-routes.post('/admin/users', UserController.post) // Cadastrar um usuário => OK
-routes.get('/admin/users/create', UserController.create) // Mostrar o formulário de criação de um usuário => OK
-routes.put('/admin/users/:id', UserController.put) // Editar um usuário
-routes.get('/admin/users/:id/edit', UserController.edit) // Mostrar o formulário de edição de um usuário
-routes.delete('/admin/users/:id', UserController.delete) // Deletar um usuário
+routes.get("/admin/users", UserController.list); // Mostrar a lista de usuários cadastrados => OK
+routes.post("/admin/users", UserController.post); // Cadastrar um usuário => OK
+routes.get("/admin/users/create", UserController.create); // Mostrar o formulário de criação de um usuário => OK
+routes.put("/admin/users/:id", UserController.put); // Editar um usuário
+routes.get("/admin/users/:id/edit", UserController.edit); // Mostrar o formulário de edição de um usuário
+routes.delete("/admin/users/:id", UserController.delete); // Deletar um usuário
 ```
 
 ### **Tabelas**
@@ -109,24 +110,17 @@ ATENÇÃO: Você vai precisar **criar relacionamentos entre usuários e receita
 
 Para usar a biblioteca `express-session` que trabalha com sessão e utiliza a configuração `pg_simple`; você vai precisar da tabela abaixo.
 
-`CREATE TABLE "session" (
-  "sid" varchar NOT NULL COLLATE "default",
-  "sess" json NOT NULL,
-  "expire" timestamp(6) NOT NULL
-)
-WITH (OIDS=FALSE);
-ALTER TABLE "session"
-ADD CONSTRAINT "session_pkey"PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;`
+`CREATE TABLE "session" ( "sid" varchar NOT NULL COLLATE "default", "sess" json NOT NULL, "expire" timestamp(6) NOT NULL ) WITH (OIDS=FALSE); ALTER TABLE "session" ADD CONSTRAINT "session_pkey"PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;`
 
 ### **Telas**
 
 O sistema irá ter as seguintes telas
 
 - [Tela de **login**](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/blob/master/desafios/10-sistema-login-foodfy.md#login);
-- Tela de **pedido de recuperação de senha** (*O sistema irá enviar um email com o link de recuperação*);
+- Tela de **pedido de recuperação de senha** (_O sistema irá enviar um email com o link de recuperação_);
 - [Tela de **recuperação de senha**](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/blob/master/desafios/10-sistema-login-foodfy.md#recovery);
-- **[Tela de informações** do usuário](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/blob/master/desafios/10-sistema-login-foodfy.md#user) (*O usuário deverá preencher sua senha para alterar suas informações*);
-- Tela de **listagem de receitas do usuário** (*Mostrar somente as receitas cadastradas pelo usuário logado*);
+- **[Tela de informações** do usuário](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/blob/master/desafios/10-sistema-login-foodfy.md#user) (_O usuário deverá preencher sua senha para alterar suas informações_);
+- Tela de **listagem de receitas do usuário** (_Mostrar somente as receitas cadastradas pelo usuário logado_);
 - [Tela de **listagem/gerenciamento** de usuários do sistema](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/blob/master/desafios/10-sistema-login-foodfy.md#admin-users) (**LEMBRE:** *Somente o administrador tem acesso a essa parte do sistema*).
 
 **Login**
@@ -180,10 +174,10 @@ Você deverá criar estratégias de envio de emails para o Foodfy
 
 ## Como contribuir:
 
--  Faça um fork do projeto;
--  Crie uma nova branch, exemplo: `git checkout -b my-feature`;
--  Commit as modificações, exemplo: `git commit -m 'feat: My new feature'`;
--  Faça um push para a sua branch: `git push origin my-feature`.
+- Faça um fork do projeto;
+- Crie uma nova branch, exemplo: `git checkout -b my-feature`;
+- Commit as modificações, exemplo: `git commit -m 'feat: My new feature'`;
+- Faça um push para a sua branch: `git push origin my-feature`.
 
 Criado por Manfrinne Ferreira [Contato](https://www.linkedin.com/in/manfrinne-ferreira-6033121a7/)
 
@@ -192,4 +186,3 @@ Criado por Manfrinne Ferreira [Contato](https://www.linkedin.com/in/manfrinne-fe
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
 
 ---
-
