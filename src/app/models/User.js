@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const db = require('../../config/db')
 const mailer = require('../../lib/mailer')
 const { hash } = require('bcryptjs')
-const Recipe = require('../models/Recipe')
+const Recipe = require('../models/recipe')
 const File = require('../models/file')
 
 module.exports = {
