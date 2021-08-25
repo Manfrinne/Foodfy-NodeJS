@@ -36,6 +36,10 @@ header .menu a {
     padding: 15px;
 }
 
+header .menu a:hover {
+  font-weight: bold;
+}
+
 .menu-links {
   padding-top: 6px;
   padding-bottom: 6px;
@@ -323,7 +327,7 @@ header .header form {
 }
 
 header .header form input {
-  border: 1px solid #eee;
+  border: 1px solid #cac8c8;
   padding: 10px 8px;
   box-sizing: border-box;
   font-size: 14px;

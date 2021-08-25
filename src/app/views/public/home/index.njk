@@ -9,11 +9,7 @@
 
   <div class="header">
 
-    <div class="menu-links">
-      <a href="/public/about">Sobre</a>
-      <a href="/public/recipes">Receitas</a>
-      <a href="/public/chefs">Chefs</a>
-    </div>
+    {% include 'public/home/parts/header-links.njk' %}
 
     <form action="/public" method="GET">
       <input type="text" name="filter" placeholder="Buscar uma receita" value={{filter}}>
