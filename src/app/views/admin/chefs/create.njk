@@ -13,9 +13,45 @@
 
 <form method="POST" id="create" action="/admin/chefs" enctype="multipart/form-data">
 
-  {% include 'admin/chefs/fields.njk' %}
+  <div class="input-block">
+    <label for="avatar">Imagem do Avatar</label>
+    <div class="upload-list">
+      <div id="photos-upload">
+        <i class="material-icons">add</i>
+        <input
+          id="photos-input"
+          type="file"
+          name="photos"
+          multiple
+          accept="image/*"
+          onchange="PhotosUpload.handleFileInput(event)"
+        >
+      </div>
+
+      <div id="photos-preview">
+        {% if files %}
+          {% for image in files %}
+            <div class="photo" id="{{image.id}}">
+              <img src="{{image.src}}" alt="{{image.name}}">
+              <i class="material-icons" onclick="PhotosUpload.removeOldPhoto(event)">close</i>
+            </div>
+          {% endfor %}
+          <input type="hidden" name="removed_files">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="inputs-chefe-create">
+    <div class="input-block">
+      <label for="name">Nome</label>
+      <div>
+        <input type="text" name="name" placeholder="Nome do chefe" value="{{chef.name}}">
+      </div>
+    </div>
+  </div>
+
 
 </form>
-
 
 {% endblock content %}

@@ -14,6 +14,7 @@ for (item of menuItens) {
 const PhotosUpload = {
   input: "",
   preview: document.querySelector('#photos-preview'),
+  photosUpload: document.querySelector('#photos-upload'),
   uploadLimit: 6,
   files: [],
 
@@ -22,7 +23,6 @@ const PhotosUpload = {
     PhotosUpload.input = event.target
 
     if(PhotosUpload.hasLimit(event)) return
-
 
     Array.from(fileList).forEach(file => {
 
@@ -45,11 +45,20 @@ const PhotosUpload = {
 
     PhotosUpload.input.files = PhotosUpload.getAllFiles()
 
+    if (currentPage.includes("chefs")) {
+      if (PhotosUpload.input.files) {
+        PhotosUpload.photosUpload.style.display='none'
+      }
+    }
   },
 
   hasLimit(event) {
-    const {uploadLimit, input, preview} = PhotosUpload
+    let {uploadLimit, input, preview} = PhotosUpload
     const {files: fileList} = input
+
+    if (currentPage.includes("chefs")) {
+      uploadLimit = 1
+    }
 
     if (fileList.length > uploadLimit) {
       alert(`Error! Envie no máximo ${uploadLimit} imagens`)
@@ -116,6 +125,11 @@ const PhotosUpload = {
 
     photoDiv.remove()
 
+    if (currentPage.includes("chefs")) {
+      if (PhotosUpload.input.files) {
+        PhotosUpload.photosUpload.style.display='block'
+      }
+    }
   },
 
   removeOldPhoto(event) {
@@ -129,25 +143,6 @@ const PhotosUpload = {
     }
 
     photoDiv.remove()
-  }
-}
-
-// function in the chefs/create-edit page
-const PhotoAvatarUpload = {
-
-  inputAtavarURL: document.querySelector('#photos-chefe-upload'),
-
-  handleAvatarFileInput(event) {
-    const file = event.target
-
-    const reader = new FileReader()
-    reader.onload = () => {
-      const imageURL = reader.result
-      this.inputAtavarURL.src = imageURL
-    }
-
-    reader.readAsDataURL(file.files[0])
-
   }
 }
 

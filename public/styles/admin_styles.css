@@ -18,6 +18,11 @@ header {
   height: 80px;
 }
 
+.hidden {
+  height: 0px;
+  width: 0px;
+}
+
 .header-content {
   width: 940px;
   height: 100%;
@@ -351,7 +356,7 @@ form #photos-preview img {
     height: 49px;
     outline: none;
     background: #FFFFFF;
-    border: 1px solid #DDDDDD;
+    border: 1px solid #cac8c8;
     border-radius: 4px;
     padding: 0 20px;
     margin-top: 10px;
@@ -366,7 +371,7 @@ form #photos-preview img {
   height: 51px;
   outline: none;
   background: #FFFFFF;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #cac8c8;
   border-radius: 4px;
   padding: 0 20px;
   margin-top: 10px;
