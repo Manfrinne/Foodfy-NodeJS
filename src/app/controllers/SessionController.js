@@ -67,7 +67,7 @@ module.exports = {
         html: `<h2>RECUPERAR SENHA FOODFY</h2>
           <p>Clique no link abaixo para recuperar sua senha:</p>
           <p>
-            <a href="http://localhost:3000/admin/users/password-reset?token=${token}" target="_blank">
+            <a href="http://localhost:3002/admin/users/password-reset?token=${token}" target="_blank">
               RECUPERAR SENHA!
             </a>
           </p>

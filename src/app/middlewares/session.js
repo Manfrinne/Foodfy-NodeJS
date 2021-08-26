@@ -74,7 +74,12 @@ async function userRecipesVerification(req, res, next) {
   //Verificar se o usuário é um administrador
   const user = await User.findOne({ where: {id} })
 
-  if (!forNext(allRecipesPromise, req.params.id) && !user.is_admin) return res.send('Você não pode modificar essa receita!')
+  if (!forNext(allRecipesPromise, req.params.id) && !user.is_admin) {
+    return res.render('admin/users/show', {
+      user,
+      error: 'Você não pode modificar essa receita'
+    })
+  }
 
   next()
 
