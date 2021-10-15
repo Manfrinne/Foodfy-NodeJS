@@ -1,44 +1,40 @@
-
-
 {% extends "admin/parts/layoutAdmin.njk" %}
 
 {% block content %}
 
-<div class="menu">
-  <h2 class="title">Atualizar Usuário</h2>
-  <div class="buttons-edit-page">
-    <button type="submit" form="delete" class="delete-button">Deletar</button>
-    <button type="submit" form="update">Salvar</button>
-  </div>
-</div>
-
-<form method=POST id="update" action="/admin/users?_method=PUT">
-
-  {% include 'admin/users/fields.njk' %}
-  <input type="hidden" name="id" value={{user.id}}>
-
-  <div class="inputs-users-create users-isAdmin-field ">
-
-    {% if user.is_admin %}
-
-      <input type="radio" id="admin" name="is_admin" checked>
-      <label for="admin">Administrador</label>
-
-    {% else %}
-
-      <input type="radio" id="admin" name="is_admin">
-      <label for="admin">Administrador</label>
-
-    {% endif %}
-
+  <div class="menu">
+    <h2 class="title">Atualizar Usuário</h2>
+    <div class="buttons-edit-page">
+      <button type="submit" form="delete" class="delete-button">Deletar</button>
+      <button type="submit" form="update">Salvar</button>
+    </div>
   </div>
 
-</form>
+  <form method=POST id="update" action="/admin/users?_method=PUT">
 
-<form id="delete" method="POST" action="/admin/users?_method=DELETE">
-  <input type="hidden" name="id" value={{user.id}}>
-</form>
+    {% include 'admin/users/fields.njk' %}
+    <input type="hidden" name="id" value={{user.id}}>
+
+    <div class="inputs-users-create users-isAdmin-field ">
+
+      {% if user.is_admin %}
+
+        <input type="radio" id="admin" name="is_admin" checked>
+        <label for="admin">Administrador</label>
+
+      {% else %}
+
+        <input type="radio" id="admin" name="is_admin">
+        <label for="admin">Administrador</label>
+
+      {% endif %}
+
+    </div>
+
+  </form>
+
+  <form id="delete" method="POST" action="/admin/users?_method=DELETE">
+    <input type="hidden" name="id" value={{user.id}}>
+  </form>
 
 {% endblock content %}
-
-

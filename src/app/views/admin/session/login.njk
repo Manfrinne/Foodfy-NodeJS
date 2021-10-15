@@ -1,21 +1,18 @@
-
 {% extends "admin/parts/layoutLogin.njk" %}
 
 {% block content %}
 
-    <h2 class="title">Iniciar Sessão</h2>
+  <h2 class="title">Iniciar Sessão</h2>
 
-    <form method="POST" id="userLogin" action="/admin/users/login">
-      {% include 'admin/session/fields.njk' %}
-    </form>
+  <form method="POST" id="userLogin" action="/admin/users/login">
+    {% include 'admin/session/fields.njk' %}
+  </form>
 
-    <div class="user-login-button">
-      <a href="forgot-password">Perdeu a senha?</a>
-      <div class="buttons">
-        <button type="submit" form="userLogin">Acessar</button>
-      </div>
+  <div class="user-login-button">
+    <a href="forgot-password">Perdeu a senha?</a>
+    <div class="buttons">
+      <button type="submit" form="userLogin">Acessar</button>
     </div>
+  </div>
 
 {% endblock content %}
-
-

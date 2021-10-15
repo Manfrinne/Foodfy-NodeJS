@@ -22,35 +22,35 @@
 
 {% block content %}
 
-<section class="cards">
+  <section class="cards">
 
-  {%for recipe in recipes%}
+    {%for recipe in recipes%}
 
-    <div class="card" id="{{recipe.title}}" number="{{recipe.id}}">
-      <div class="card__image-container">
+      <div class="card" id="{{recipe.title}}" number="{{recipe.id}}">
+        <div class="card__image-container">
 
-      {% for file in files %}
-        {% if file.recipe_id == recipe.id %}
-          <img src="{{file.src}}" alt="Image {{file.name}}">
-        {% endif %}
-      {% endfor %}
+          {% for file in files %}
+            {% if file.recipe_id == recipe.id %}
+              <img src="{{file.src}}" alt="Image {{file.name}}">
+            {% endif %}
+          {% endfor %}
 
-      </div>
+        </div>
 
-      <div class="plate-name">
+        <div class="plate-name">
           <h5>{{recipe.title}}</h5>
-      </div>
-      <div class="cooker-name">
+        </div>
+        <div class="cooker-name">
           <p>Por {{recipe.chef_name}}</p>
+        </div>
       </div>
-    </div>
 
-  {%else%}
+      {%else%}
 
-    <h3 style="color: #777; font-size: 14px">Ainda não há receitas cadastradas!</h3>
+      <h3 style="color: #777; font-size: 14px">Ainda não há receitas cadastradas!</h3>
 
-  {%endfor%}
+      {%endfor%}
 
-</section>
+    </section>
 
-{% endblock %}
+  {% endblock %}

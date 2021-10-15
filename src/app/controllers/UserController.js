@@ -1,127 +1,99 @@
-const User = require('../models/User')
+const User = require("../models/User");
 
 module.exports = {
-
   create(req, res) {
-
-    return res.render('admin/users/create')
-
+    return res.render("admin/users/create");
   },
 
   async post(req, res) {
-
     //Storage user data in the database
-    await User.create(req.body)
+    await User.create(req.body);
 
-    return res.redirect('/admin/users/usersList')
-
+    return res.redirect("/admin/users/usersList");
   },
 
   async list(req, res) {
+    const results = await User.all();
+    const users = results.rows;
 
-    const results = await User.all()
-    const users = results.rows
-
-    return res.render('admin/users/usersList', { users })
-
+    return res.render("admin/users/usersList", { users });
   },
 
   async edit(req, res) {
+    const { id } = req.params;
 
-    const {id} = req.params
+    const user = await User.findOne({ where: { id } });
 
-    const user = await User.findOne({ where: {id} })
-
-    return res.render('admin/users/edit', { user })
-
+    return res.render("admin/users/edit", { user });
   },
 
   async update(req, res) {
-
     try {
+      const { user } = req;
 
-      const { user } = req
+      let { name, email } = req.body;
 
-      let {name, email} = req.body
+      await User.update(user.id, { name, email });
 
-      await User.update(user.id, { name, email })
-
-      return res.render('admin/users/show', {
+      return res.render("admin/users/show", {
         user: req.body,
-        success: 'Usuário modificado com sucesso!'
-      })
+        success: "Usuário modificado com sucesso!",
+      });
+    } catch (err) {
+      console.error(err);
 
-    } catch(err) {
-
-      console.error(err)
-
-      return res.render('admin/users/show', {
+      return res.render("admin/users/show", {
         user: req.body,
-        error: 'Sorry! Algo deu errado...!'
-      })
-
+        error: "Sorry! Algo deu errado...!",
+      });
     }
-
   },
 
   async updateAdmin(req, res) {
-
     try {
+      const { user } = req;
 
-      const { user } = req
+      let { name, email } = req.body;
 
-      let {name, email} = req.body
+      await User.update(user.id, { name, email });
 
-      await User.update(user.id, { name, email })
-
-      return res.render('admin/users/edit', {
+      return res.render("admin/users/edit", {
         user: req.body,
-        success: 'Usuário modificado com sucesso!'
-      })
+        success: "Usuário modificado com sucesso!",
+      });
+    } catch (err) {
+      console.error(err);
 
-    } catch(err) {
-
-      console.error(err)
-
-      return res.render('admin/users/show', {
+      return res.render("admin/users/show", {
         user: req.body,
-        error: 'Sorry! Algo deu errado...!'
-      })
-
+        error: "Sorry! Algo deu errado...!",
+      });
     }
-
   },
 
   async show(req, res) {
+    const { user } = req;
 
-    const { user } = req
-
-    return res.render('admin/users/show', { user })
-
+    return res.render("admin/users/show", { user });
   },
 
   async delete(req, res) {
-
     try {
+      await User.delete(req.body.id);
 
-      await User.delete(req.body.id)
+      const results = await User.all();
+      const users = results.rows;
 
-      const results = await User.all()
-      const users = results.rows
-
-      return res.render('admin/users/usersList', {
+      return res.render("admin/users/usersList", {
         users,
-        success: 'Conta deletada com sucesso!'
-      })
-
-    } catch(err) {
-
-      console.error(err)
-      return res.render('admin/users/usersList', {
+        success: "Conta deletada com sucesso!",
+      });
+    } catch (err) {
+      console.error(err);
+      return res.render("admin/users/usersList", {
         user: req.body,
-        error: 'Erro ao tentar deletar a conta! Tente novamente'
-      })
-
+        error: "Erro ao tentar deletar a conta! Tente novamente",
+      });
     }
-  }
-}
+  },
+};

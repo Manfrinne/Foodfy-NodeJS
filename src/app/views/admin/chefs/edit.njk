@@ -1,44 +1,41 @@
-
-
 {% extends "admin/parts/layoutAdmin.njk" %}
 
 {% block content %}
 
-<div class="menu">
-  <h2 class="title">Editando Chefe</h2>
-  <div class="buttons-edit-page">
-    <button type="submit" form="delete" class="delete-button">Deletar</button>
-    <button type="submit" form="salve">Salvar Chefe</button>
+  <div class="menu">
+    <h2 class="title">Editando Chefe</h2>
+    <div class="buttons-edit-page">
+      <button type="submit" form="delete" class="delete-button">Deletar</button>
+      <button type="submit" form="salve">Salvar Chefe</button>
+    </div>
   </div>
-</div>
 
-<form method=POST id="salve" action="/admin/chefs?_method=PUT" enctype="multipart/form-data">
+  <form method=POST id="salve" action="/admin/chefs?_method=PUT" enctype="multipart/form-data">
 
-  {% include 'admin/chefs/fields.njk' %}
-  <input type="hidden" name="id" value="{{chef.id}}">
+    {% include 'admin/chefs/fields.njk' %}
+    <input type="hidden" name="id" value="{{chef.id}}">
 
-</form>
+  </form>
 
-<form method="POST" id="delete" action="/admin/chefs?_method=DELETE">
-  <input type="hidden" name="id" value="{{chef.id}}">
-  <input type="hidden" name="removeAtavarfile" value="{{chef.file_id}}">
-  <input type="hidden" id="registeredRecipes" value="{{chef.total_recipes}}" >
-</form>
+  <form method="POST" id="delete" action="/admin/chefs?_method=DELETE">
+    <input type="hidden" name="id" value="{{chef.id}}">
+    <input type="hidden" name="removeAtavarfile" value="{{chef.file_id}}">
+    <input type="hidden" id="registeredRecipes" value="{{chef.total_recipes}}" >
+  </form>
 
   <script>
 
-    const recipes = (+(document.getElementById("registeredRecipes").value))
+    const recipes = (+ (document.getElementById("registeredRecipes").value))
 
     const formDelete = document.querySelector("#delete")
-    formDelete.addEventListener("submit", function(event) {
+    formDelete.addEventListener("submit", function (event) {
 
-      if(recipes) {
+      if (recipes) {
         event.preventDefault()
 
         alert("CHEFE NÃO PODE SER DELETADO!")
       }
     })
-
   </script>
 
 {% endblock content %}

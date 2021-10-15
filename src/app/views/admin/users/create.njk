@@ -1,38 +1,38 @@
-
 {% extends "admin/parts/layoutAdmin.njk" %}
 
 {% block content %}
 
-<div class="menu">
-  <h2 class="title">Criar Usuário</h2>
-  <div class="create-user-buttons">
+  <div class="menu">
+    <h2 class="title">Criar Usuário</h2>
+    <div class="create-user-buttons">
       <div class="buttons">
         <button type="submit" form="create">Salvar</button>
       </div>
       <div class="user-cancel buttons">
-        <button type="button"><a href="create">Cancelar</a></button>
+        <button type="button">
+          <a href="create">Cancelar</a>
+        </button>
       </div>
+    </div>
   </div>
-</div>
 
-<form method="POST" id="create" action="/admin/users/create">
+  <form method="POST" id="create" action="/admin/users/create">
 
-  {% include 'admin/users/fields.njk' %}
+    {% include 'admin/users/fields.njk' %}
 
-  <div class="inputs-users-create users-isAdmin-field ">
+    <div class="inputs-users-create users-isAdmin-field ">
 
-    {% if not user.is_admin %}
-      <input type="radio" id="admin" name="is_admin">
-      <label for="admin">Administrador</label>
-    {% else %}
-      <input type="radio" id="admin" name="is_admin" value="{{user.is_admin}}"
+      {% if not user.is_admin %}
+        <input type="radio" id="admin" name="is_admin">
+        <label for="admin">Administrador</label>
+      {% else %}
+        <input type="radio" id="admin" name="is_admin" value="{{user.is_admin}}"
       {% if user.is_admin == 'true' %} checked {% endif %}>
-      <label for="admin">Administrador</label>
-    {% endif %}
+        <label for="admin">Administrador</label>
+      {% endif %}
 
-  </div>
+    </div>
 
-</form>
-
+  </form>
 
 {% endblock content %}

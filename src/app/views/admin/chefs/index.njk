@@ -1,56 +1,52 @@
-
 {% extends "admin/parts/layoutAdmin.njk" %}
 
 {% block content %}
 
-<div class="menu">
-  <h2 class="title">Gerenciar Chefes</h2>
-  <div class="buttons">
-    <a href="chefs/create">Criar Chefe</a>
-  </div>
-</div>
-
-<section class="chef-manager-cards">
-
-  {%for chef in chefs%}
-
-    <div class="single-chef-manager-card">
-      <div class="avatar-chef-manager">
-
-        {% if not files %}
-
-          <img src="http://placehold.it/172x80?text=PRODUTO SEM FOTO" alt=""/>
-
-        {% else %}
-
-          {% for file in files %}
-            {% if file.id == chef.file_id %}
-              <img src="{{file.src}}" alt="Image {{file.name}}">
-            {% endif %}
-          {% endfor %}
-
-        {% endif %}
-
-      </div>
-      <div class="chef-card-description">
-        <div class="card-description-chef-name">
-          <h6>{{chef.name}}</h6>
-        </div>
-        <div class="button-description-toView-chefPage">
-          <a href="chefs/{{chef.id}}">Visualizar</a>
-        </div>
-      </div>
+  <div class="menu">
+    <h2 class="title">Gerenciar Chefes</h2>
+    <div class="buttons">
+      <a href="chefs/create">Criar Chefe</a>
     </div>
+  </div>
 
-  {%else%}
+  <section class="chef-manager-cards">
 
-    <h3 style="color: #777; font-size: 14px">Ainda não há chefes cadastrados!</h3>
+    {%for chef in chefs%}
 
-  {%endfor%}
+      <div class="single-chef-manager-card">
+        <div class="avatar-chef-manager">
 
-</section>
+          {% if not files %}
 
-{% endblock content %}
+            <img src="http://placehold.it/172x80?text=PRODUTO SEM FOTO" alt=""/>
 
+          {% else %}
 
+            {% for file in files %}
+              {% if file.id == chef.file_id %}
+                <img src="{{file.src}}" alt="Image {{file.name}}">
+              {% endif %}
+            {% endfor %}
 
+          {% endif %}
+
+        </div>
+        <div class="chef-card-description">
+          <div class="card-description-chef-name">
+            <h6>{{chef.name}}</h6>
+          </div>
+          <div class="button-description-toView-chefPage">
+            <a href="chefs/{{chef.id}}">Visualizar</a>
+          </div>
+        </div>
+      </div>
+
+      {%else%}
+
+      <h3 style="color: #777; font-size: 14px">Ainda não há chefes cadastrados!</h3>
+
+      {%endfor%}
+
+    </section>
+
+  {% endblock content %}

@@ -1,3 +1,10 @@
+
+-- ######## CRIAR BANCO DE DADOS
+
+CREATE DATABASE FoodfyDB
+
+DROP DATABASE FoodfyDB -- Caso precise reverter a criação
+
 -- ######## DADOS PARA CRIAR AS TABELAS ##########
 
 CREATE TABLE "files" (
@@ -73,7 +80,7 @@ CREATE INDEX "IDX_session_expire" ON "session" ("expire");
 
 -- CASCADE EFFECT WHEN DELETE USER AND RECIPES
 ALTER TABLE "recipes"
-DROP CONSTRAINT recipes_user_id_fkey,
+DROP CONSTRAINT recipes_user_id_fkey,   -- Se o Constraint existir
 ADD CONSTRAINT recipes_user_id_fkey
 FOREIGN KEY ("user_id")
 REFERENCES "users" ("id")

@@ -31,28 +31,28 @@
       <div class="card" id="{{recipe.title}}" number="{{recipe.id}}">
         <div class="card__image-container">
 
-        {% for file in files %}
-          {% if file.recipe_id == recipe.id %}
-            <img src="{{file.src}}" alt="Image {{file.name}}">
-          {% endif %}
-        {% endfor %}
+          {% for file in files %}
+            {% if file.recipe_id == recipe.id %}
+              <img src="{{file.src}}" alt="Image {{file.name}}">
+            {% endif %}
+          {% endfor %}
 
         </div>
 
         <div class="plate-name">
-            <h5>{{recipe.title}}</h5>
+          <h5>{{recipe.title}}</h5>
         </div>
         <div class="cooker-name">
-            <p>Por {{recipe.chef_name}}</p>
+          <p>Por {{recipe.chef_name}}</p>
         </div>
       </div>
 
-    {%else%}
+      {%else%}
 
       <h3 style="color: #777;">Receita não encontrada!</h3>
 
-    {%endfor%}
+      {%endfor%}
 
-  </section>
+    </section>
 
-{% endblock %}
+  {% endblock %}

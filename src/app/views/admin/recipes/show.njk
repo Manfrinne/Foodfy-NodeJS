@@ -1,78 +1,74 @@
-
 {% extends "admin/parts/layoutAdmin.njk" %}
 
 {% block content %}
 
-<div class="menu">
-  <h2 class="title">Receita: {{recipe.title}}</h2>
-  <div class="buttons">
-    <a href="{{recipe.id}}/edit">Editar Receita</a>
-  </div>
-</div>
-
-<section class="uniq_recipe">
-
-  <div class="gallery">
-
-    <div class="highlight">
-      {% if not files[0] %}
-        <img src="http://placehold.it/500x500?text=PRODUTO SEM FOTO" alt=""/>
-      {% else %}
-        <img src="{{files[0].src}}" alt="{{files[0].name}}" onclick="LightBox.open()">
-      {% endif %}
+  <div class="menu">
+    <h2 class="title">Receita: {{recipe.title}}</h2>
+    <div class="buttons">
+      <a href="{{recipe.id}}/edit">Editar Receita</a>
     </div>
+  </div>
 
-    <div class="gallery-preview">
-      {% for image in files %}
-        <img src="{{image.src}}" alt="{{image.name}}"
+  <section class="uniq_recipe">
+
+    <div class="gallery">
+
+      <div class="highlight">
+        {% if not files[0] %}
+          <img src="http://placehold.it/500x500?text=PRODUTO SEM FOTO" alt=""/>
+        {% else %}
+          <img src="{{files[0].src}}" alt="{{files[0].name}}" onclick="LightBox.open()">
+        {% endif %}
+      </div>
+
+      <div class="gallery-preview">
+        {% for image in files %}
+          <img src="{{image.src}}" alt="{{image.name}}"
         {% if loop.index0 == 0 %}
           class="active"
         {% endif %}
         onclick="ImageGallery.setImage(event)">
-      {% endfor %}
+        {% endfor %}
+      </div>
+
     </div>
 
-  </div>
+    {# ##################################### #}
 
-  {# ##################################### #}
-
-  <div class="uniq_recipe_infor">
+    <div class="uniq_recipe_infor">
       <h2 class="uniq_recipe_name">{{recipe.title}}</h5>
       <p class="uniq_cooker">por {{recipe.chef_name}}</p>
-  </div>
-
-  <div class="uniq_recipe_content">
-    <div class="topics">
-      <h3 class="uniq_topics">Ingredientes</h3>
-    </div>
-    <div class="uniq_topics_contents">
-      {%for ingredient in recipe.ingredients%}
-        <li class="uniq_topics_content">{{ingredient}}</li>
-      {%endfor%}
     </div>
 
-    <div class="topics">
-      <h3 class="uniq_topics">Modo de preparo</h3>
-    </div>
-    <div class="uniq_topics_contents">
-      {%for preparation in recipe.preparation%}
-        <li class="uniq_topics_content">{{preparation}}</li>
-      {%endfor%}
-    </div>
-
-    <div class="topics">
-      <h3 class="uniq_topics">Informações adicionais</h3>
-    </div>
-    <div class="uniq_topics_contents">
-      <div class="uniq_topics_content">
-        {{recipe.information}}
+    <div class="uniq_recipe_content">
+      <div class="topics">
+        <h3 class="uniq_topics">Ingredientes</h3>
       </div>
-    </div>
-  </div>
+      <div class="uniq_topics_contents">
+        {%for ingredient in recipe.ingredients%}
+          <li class="uniq_topics_content">{{ingredient}}</li>
+          {%endfor%}
+        </div>
 
-</section>
+        <div class="topics">
+          <h3 class="uniq_topics">Modo de preparo</h3>
+        </div>
+        <div class="uniq_topics_contents">
+          {%for preparation in recipe.preparation%}
+            <li class="uniq_topics_content">{{preparation}}</li>
+            {%endfor%}
+          </div>
 
-{% endblock content %}
+          <div class="topics">
+            <h3 class="uniq_topics">Informações adicionais</h3>
+          </div>
+          <div class="uniq_topics_contents">
+            <div class="uniq_topics_content">
+              {{recipe.information}}
+            </div>
+          </div>
+        </div>
 
+      </section>
 
-
+    {% endblock content %}

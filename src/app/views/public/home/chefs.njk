@@ -1,12 +1,10 @@
-
 {% extends "./layoutHome.njk" %}
 
 {% block head %}
-    <title>Foodfy chefes</title>
+  <title>Foodfy chefes</title>
 {% endblock %}
 
 {% block header %}
-
 
   <div class="header">
 
@@ -18,43 +16,43 @@
 
 {% block content %}
 
-<section class="chef-manager-cards">
+  <section class="chef-manager-cards">
 
-  {%for chef in chefs%}
+    {%for chef in chefs%}
 
-    <div class="single-chef-manager-card">
-      <div class="avatar-chef-manager">
+      <div class="single-chef-manager-card">
+        <div class="avatar-chef-manager">
 
-        {% if not files %}
+          {% if not files %}
 
-          <img src="http://placehold.it/172x80?text=PRODUTO SEM FOTO" alt=""/>
+            <img src="http://placehold.it/172x80?text=PRODUTO SEM FOTO" alt=""/>
 
-        {% else %}
+          {% else %}
 
-          {% for file in files %}
-            {% if file.id == chef.file_id %}
-              <img src="{{file.src}}" alt="Image {{file.name}}">
-            {% endif %}
-          {% endfor %}
+            {% for file in files %}
+              {% if file.id == chef.file_id %}
+                <img src="{{file.src}}" alt="Image {{file.name}}">
+              {% endif %}
+            {% endfor %}
 
-        {% endif %}
+          {% endif %}
 
-      </div>
-
-      <div class="chef-card-description">
-        <div class="card-description-chef-name">
-          <h6>{{chef.name}}</h6>
         </div>
-        <div class="recipes-amount">{{chef.total_recipes}} receitas</div>
+
+        <div class="chef-card-description">
+          <div class="card-description-chef-name">
+            <h6>{{chef.name}}</h6>
+          </div>
+          <div class="recipes-amount">{{chef.total_recipes}} receitas</div>
+        </div>
       </div>
-    </div>
 
-  {%else%}
+      {%else%}
 
-    <h3 style="color: #777; font-size: 14px">Ainda não há chefes cadastrados!</h3>
+      <h3 style="color: #777; font-size: 14px">Ainda não há chefes cadastrados!</h3>
 
-  {%endfor%}
+      {%endfor%}
 
-</section>
+    </section>
 
-{% endblock %}
+  {% endblock %}

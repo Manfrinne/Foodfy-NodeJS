@@ -1,28 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <script src="/scripts/admin_script.js" defer></script>
-  {% include 'admin/parts/styles.njk' %}
-  <title>Foodfy Login</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/scripts/admin_script.js" defer></script>
+    {% include 'admin/parts/styles.njk' %}
+    <title>Foodfy Login</title>
+  </head>
+  <body>
 
-  {% include "admin/parts/messages_login.njk" %}
+    {% include "admin/parts/messages_login.njk" %}
 
-  <div class="header-users-login">
-    <img src="/assets/logo.png" alt="Image Logo">
-  </div>
+    <div class="header-users-login">
+      <img src="/assets/logo.png" alt="Image Logo">
+    </div>
 
-  <div class="user-login-dashboard">
+    <div class="user-login-dashboard">
 
-    {% block content %}{% endblock content %}
+      {% block content %}{% endblock content %}
 
-  </div>
+    </div>
 
-</body>
+  </body>
 </html>
-
-

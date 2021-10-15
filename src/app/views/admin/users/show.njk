@@ -1,24 +1,22 @@
-
-
 {% extends "admin/parts/layoutAdmin.njk" %}
 
 {% block content %}
 
-<div class="menu">
-  <h2 class="title">Bem vindo {{user.name}}</h2>
-  <div class="profile-user-buttons">
+  <div class="menu">
+    <h2 class="title">Bem vindo {{user.name}}</h2>
+    <div class="profile-user-buttons">
       <div class="buttons">
         <button type="submit" form="user-update">Salvar</button>
       </div>
+    </div>
   </div>
-</div>
 
-<form method="POST" id="user-update" action="/admin/profile?_method=PUT">
+  <form method="POST" id="user-update" action="/admin/profile?_method=PUT">
 
-  {% include 'admin/users/fields.njk' %}
-  <input type="hidden" name="id" value={{user.id}}>
+    {% include 'admin/users/fields.njk' %}
+    <input type="hidden" name="id" value={{user.id}}>
 
-  <div class="inputs-users-create" id="profile-users-field">
+    <div class="inputs-users-create" id="profile-users-field">
       <label for="password">Senha</label>
       <div class="input">
         <input
@@ -27,9 +25,8 @@
           placeholder="Digite sua senha para atualizar seus dados"
         >
       </div>
-  </div>
+    </div>
 
-</form>
-
+  </form>
 
 {% endblock content %}

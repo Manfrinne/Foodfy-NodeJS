@@ -1,56 +1,51 @@
-
 {% extends "admin/parts/layoutAdmin.njk" %}
 
 {% block content %}
 
-<div class="menu">
-  <h2 class="title">Gerenciar Receitas</h2>
-  <div class="buttons">
-    <a href="recipes/create">Criar Receita</a>
+  <div class="menu">
+    <h2 class="title">Gerenciar Receitas</h2>
+    <div class="buttons">
+      <a href="recipes/create">Criar Receita</a>
+    </div>
   </div>
-</div>
 
-<section class="chefs-details">
+  <section class="chefs-details">
 
-  <div class="chef-recipes-cards">
+    <div class="chef-recipes-cards">
 
-    {%for recipe in recipes%}
+      {%for recipe in recipes%}
 
-      <div class="single-recipe-card">
-        <div class="recipe-image">
+        <div class="single-recipe-card">
+          <div class="recipe-image">
 
-        {% for file in files %}
-          {% if file.recipe_id == recipe.id %}
-            <img src="{{file.src}}" alt="Image {{file.name}}">
-          {% endif %}
-        {% endfor %}
+            {% for file in files %}
+              {% if file.recipe_id == recipe.id %}
+                <img src="{{file.src}}" alt="Image {{file.name}}">
+              {% endif %}
+            {% endfor %}
 
-        </div>
-        <div class="card-recipe-description">
-          <div class="card-description-plate-name">
-            <h6>{{recipe.title}}</h6>
           </div>
-          <div class="card-description-chef-name">
+          <div class="card-recipe-description">
+            <div class="card-description-plate-name">
+              <h6>{{recipe.title}}</h6>
+            </div>
+            <div class="card-description-chef-name">
               <p>Por {{recipe.chef_name}}</p>
-          </div>
-          <div class="button-description-toView-recipePage">
-            <a href="recipes/{{recipe.id}}">Visualizar</a>
+            </div>
+            <div class="button-description-toView-recipePage">
+              <a href="recipes/{{recipe.id}}">Visualizar</a>
+            </div>
           </div>
         </div>
+
+        {%else%}
+
+        <h3 style="color: #777; font-size: 14px">Ainda não há receitas cadastradas!</h3>
+
+        {%endfor%}
+
       </div>
 
-    {%else%}
+    </section>
 
-      <h3 style="color: #777; font-size: 14px">Ainda não há receitas cadastradas!</h3>
-
-    {%endfor%}
-
-  </div>
-
-
-</section>
-
-{% endblock content %}
-
-
-
+  {% endblock content %}

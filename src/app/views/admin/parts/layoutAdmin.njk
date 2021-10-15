@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
 
-  {% include 'admin/parts/styles.njk' %}
-  <link rel="icon" href="/assets/favicon.ico">
-  <script src="/scripts/admin_script.js" defer></script>
+    {% include 'admin/parts/styles.njk' %}
+    <link rel="icon" href="/assets/favicon.ico">
+    <script src="/scripts/admin_script.js" defer></script>
 
-  {% block head %}{% endblock head %}
+    {% block head %}{% endblock head %}
 
-  <title>FoodFy SignUp</title>
+    <title>FoodFy SignUp</title>
 
-</head>
+  </head>
 
-<body>
+  <body>
 
-  {% include "admin/parts/messages.njk" %}
+    {% include "admin/parts/messages.njk" %}
 
-  <header>
-    <div class="header-content">
-      <a href="/"><img src="/assets/logoAdmin.png" alt="Image Logo"></a>
-      <div class="menu-links">
-        <a href="/admin/recipes">RECEITAS</a>
-        <a href="/admin/chefs">CHEFES</a>
-        <a href="/admin/users/usersList">USUÁRIOS</a>
+    <header>
+      <div class="header-content">
+        <a href="/"><img src="/assets/logoAdmin.png" alt="Image Logo"></a>
+        <div class="menu-links">
+          <a href="/admin/recipes">RECEITAS</a>
+          <a href="/admin/chefs">CHEFES</a>
+          <a href="/admin/users/usersList">USUÁRIOS</a>
+        </div>
+        <form method='POST' action='/admin/users/logout'>
+          <button>SAIR</button>
+        </form>
       </div>
-      <form method='POST' action='/admin/users/logout'>
-        <button>SAIR</button>
-      </form>
-    </div>
-  </header>
+    </header>
 
-  {% block content %}{% endblock content %}
+    {% block content %}{% endblock content %}
 
-</body>
+  </body>
 </html>
