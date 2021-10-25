@@ -9,7 +9,7 @@ for (let card of cards) {
     if (currentPage.includes("recipes")) {
       window.location.href = `recipes/${urlID}`;
     } else {
-      window.location.href = `public/recipes/${urlID}`;
+      window.location.href = `recipes/${urlID}`;
     }
   });
 }

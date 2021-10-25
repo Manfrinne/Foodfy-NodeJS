@@ -19,7 +19,7 @@ module.exports = {
       results = await Recipe.findBy(filter);
       const recipes = results.rows;
 
-      return res.render("public/home/findRecipe", { recipes, filter, files });
+      return res.render("public/search", { recipes, filter, files });
     } else {
       results = await Recipe.all();
       const totalRecipes = results.rows;
@@ -28,12 +28,12 @@ module.exports = {
         index > 5 ? false : true
       );
 
-      return res.render("public/home/index", { recipes, files });
+      return res.render("public/index", { recipes, files });
     }
   },
 
   about(req, res) {
-    return res.render("public/home/about");
+    return res.render("public/about");
   },
 
   async listRecipes(req, res) {
@@ -53,12 +53,12 @@ module.exports = {
       results = await Recipe.findBy(filter);
       filter = results.rows;
 
-      return res.render("public/home/findRecipe", { recipes, filter, files });
+      return res.render("public/search", { recipes, filter, files });
     } else {
       results = await Recipe.all();
       const recipes = results.rows;
 
-      return res.render("public/home/recipes", { recipes, files });
+      return res.render("public/recipes/index", { recipes, files });
     }
   },
 
@@ -78,7 +78,7 @@ module.exports = {
       )}`,
     }));
 
-    return res.render("public/home/recipe", { recipe, files });
+    return res.render("public/recipes/show", { recipe, files });
   },
 
   async listChefs(req, res) {
@@ -95,10 +95,10 @@ module.exports = {
       )}`,
     }));
 
-    return res.render("public/home/chefs", { chefs, files });
+    return res.render("public/chefs/index", { chefs, files });
   },
 
-  async findRecipe(req, res) {
+  async search(req, res) {
     let results = await Recipe.allFiles();
     let files = results.rows;
     files = files.map((file) => ({
@@ -114,6 +114,6 @@ module.exports = {
     results = await Recipe.findBy(filter);
     const recipes = results.rows;
 
-    return res.render("public/home/findRecipe", { recipes, filter, files });
+    return res.render("public/search", { recipes, filter, files });
   },
 };
