@@ -1,11 +1,11 @@
 const express = require("express");
 const routes = express.Router();
 
-const multer = require("../app/middlewares/multer");
+const multer = require("../../app/middlewares/multer");
 
-const ChefController = require("../app/controllers/ChefController");
+const ChefController = require("../../app/controllers/ChefController");
 
-const { adminVerification } = require("../app/middlewares/session");
+const { adminVerification } = require("../../app/middlewares/session");
 
 // ADMIN CHEFS
 routes.get("/", ChefController.index);

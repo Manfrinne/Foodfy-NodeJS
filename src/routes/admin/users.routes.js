@@ -1,16 +1,16 @@
 const express = require("express");
 const routes = express.Router();
 
-const UserController = require("../app/controllers/UserController");
-const SessionController = require("../app/controllers/SessionController");
+const UserController = require("../../app/controllers/UserController");
+const SessionController = require("../../app/controllers/SessionController");
 
-const UserValidator = require("../app/validators/userValidator.js");
-const SessionValidator = require("../app/validators/sessionValidator");
+const UserValidator = require("../../app/validators/userValidator.js");
+const SessionValidator = require("../../app/validators/sessionValidator");
 
 const {
   ifLoggedRedirectToUsersProfile,
   adminVerification,
-} = require("../app/middlewares/session");
+} = require("../../app/middlewares/session");
 
 // USER CREATE - ADMIN
 routes.get("/create", adminVerification, UserController.create); // Mostrar o formulário de criação de um usuário
