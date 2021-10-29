@@ -1,12 +1,15 @@
 /* LAYOUT ADMIN PAGE */
 
-html, header, body, a {
+html,
+header,
+body,
+a {
   height: 100%;
   margin: 0;
   padding: 0;
   border: 0;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 button {
@@ -40,7 +43,7 @@ header .header-content form button {
   background-color: #111111;
   font-size: 15px;
   margin-left: 450px;
-  color: #999999;;
+  color: #999999;
   border: none;
 }
 
@@ -88,25 +91,25 @@ header .header-content form button:hover {
 }
 
 .buttons {
-  background-color: #6558C3;
+  background-color: #6558c3;
   border-radius: 4px;
   width: 120px;
   height: 37px;
 }
 
 .buttons.user-cancel button {
-  background-color: #8A8A8A;
+  background-color: #8a8a8a;
   transition: 250ms;
 }
 
 .buttons.user-cancel button:hover {
-  background-color: #DC4747;
+  background-color: #dc4747;
 }
 
 .buttons a {
   display: flex;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   align-items: center;
   justify-content: center;
 }
@@ -114,7 +117,7 @@ header .header-content form button:hover {
 .button-description-toView-chefPage a {
   font-weight: bold;
   font-size: 14px;
-  color: #6558C3;
+  color: #6558c3;
   margin-left: 10px;
   margin-bottom: 10px;
   margin-top: 0px;
@@ -123,7 +126,7 @@ header .header-content form button:hover {
 .single-recipe-card .button-description-toView-recipePage a {
   font-weight: bold;
   font-size: 14px;
-  color: #6558C3;
+  color: #6558c3;
   margin-left: 20px;
   margin-bottom: 10px;
   margin-top: 0px;
@@ -132,12 +135,11 @@ header .header-content form button:hover {
 .single-recipe-card .button-description-toView-ShowPage a {
   font-weight: bold;
   font-size: 14px;
-  color: #6558C3;
+  color: #6558c3;
   margin-left: 20px;
   margin-bottom: 10px;
   margin-top: 0px;
 }
-
 
 /* DETALHES CHEF - SHOW PAGE */
 
@@ -218,7 +220,11 @@ header .header-content form button:hover {
   border-radius: 15px;
 }
 
-.chef-recipes-cards .single-recipe-card .card-recipe-description .card-description-plate-name h6 {
+.chef-recipes-cards
+  .single-recipe-card
+  .card-recipe-description
+  .card-description-plate-name
+  h6 {
   font-weight: normal;
   font-size: 18px;
   color: #111111;
@@ -227,7 +233,11 @@ header .header-content form button:hover {
   margin-bottom: 5px;
 }
 
-.chef-recipes-cards .single-recipe-card .card-recipe-description .card-description-chef-name p {
+.chef-recipes-cards
+  .single-recipe-card
+  .card-recipe-description
+  .card-description-chef-name
+  p {
   font-weight: normal;
   font-size: 14px;
   color: #777777;
@@ -245,13 +255,13 @@ header .header-content form button:hover {
 
   width: 150px;
   height: 150px;
-  background: #FFFFFF;
+  background: #ffffff;
 
   margin-top: 10px;
 
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   border-radius: 3.5px;
-  border-radius: 3,5px;
+  border-radius: 3, 5px;
 }
 
 #photos-input {
@@ -352,30 +362,30 @@ form #photos-preview img {
 }
 
 .input-block input {
-    width: 900px;
-    height: 49px;
-    outline: none;
-    background: #FFFFFF;
-    border: 1px solid #cac8c8;
-    border-radius: 4px;
-    padding: 0 20px;
-    margin-top: 10px;
-    font-family: 'Roboto', regular;
-    font-weight: 400;
-    font-size: 16px;
-    color: #111111;
+  width: 900px;
+  height: 49px;
+  outline: none;
+  background: #ffffff;
+  border: 1px solid #cac8c8;
+  border-radius: 4px;
+  padding: 0 20px;
+  margin-top: 10px;
+  font-family: "Roboto", regular;
+  font-weight: 400;
+  font-size: 16px;
+  color: #111111;
 }
 
 .input-block select {
   width: 942px;
   height: 51px;
   outline: none;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #cac8c8;
   border-radius: 4px;
   padding: 0 20px;
   margin-top: 10px;
-  font-family: 'Roboto', regular;
+  font-family: "Roboto", regular;
   font-weight: 400;
   font-size: 16px;
   color: #111111;
@@ -384,11 +394,11 @@ form #photos-preview img {
 /* CRIAR CHEFE - CREATE PAGE */
 
 .buttons button {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 4px;
-  background-color: #6558C3;
+  background-color: #6558c3;
   width: 120px;
   height: 37px;
 }
@@ -410,27 +420,26 @@ form #photos-preview img {
 
   font-size: 16px;
   font-weight: bold;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
 
 /* EDITAR CHEFE - EDIT PAGE */
 
 .buttons-edit-page button {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 4px;
 }
 
 .buttons-edit-page .delete-button {
-  background: #DC4747;
+  background: #dc4747;
   width: 120px;
   height: 37px;
 }
 
 .buttons-edit-page button + button {
-  background-color: #6558C3;
+  background-color: #6558c3;
   width: 120px;
   height: 37px;
   margin-left: 10px;
@@ -487,7 +496,7 @@ form #photos-preview img {
 }
 
 .titleEditRecipe h3 {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-size: 24px;
   color: #111111;
   line-height: 34px;
@@ -500,7 +509,6 @@ form #photos-preview img {
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 26px;
-
 }
 
 .input-block {
@@ -508,7 +516,7 @@ form #photos-preview img {
 }
 
 .input-block label {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-weight: 700;
   font-size: 16px;
   color: #111111;
@@ -518,12 +526,12 @@ input {
   width: 900px;
   height: 49px;
   outline: none;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 2px solid #cac8c8;
   border-radius: 4px;
   padding: 0 20px;
   margin-top: 10px;
-  font-family: 'Roboto', regular;
+  font-family: "Roboto", regular;
   font-weight: 400;
   font-size: 16px;
   color: #111111;
@@ -532,18 +540,19 @@ input {
 input::placeholder {
   font-size: 16px;
   font-weight: normal;
-  color: #C1BCCC;
+  color: #c1bccc;
 }
 
-button.add-ingredient, button.add-steps {
-  font-family: 'Roboto', bold;
+button.add-ingredient,
+button.add-steps {
+  font-family: "Roboto", bold;
   font-weight: 700;
   background: none;
   margin-top: 15px;
   border: 0;
   padding: 0;
   font-size: 16px;
-  color: #6558C3;
+  color: #6558c3;
   text-align: right;
   cursor: pointer;
 }
@@ -553,20 +562,20 @@ textarea {
   height: 257px;
   resize: vertical;
   outline: none;
-  background: #FFFFFF;
-  border: 1px solid #DDDDDD;
+  background: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 4px;
   padding: 20px;
   margin-top: 10px;
-  font-family: 'Roboto', regular;
+  font-family: "Roboto", regular;
   font-weight: 400;
   font-size: 16px;
   color: #111111;
 }
 
- /* SHOW ADMIN PAGE  */
+/* SHOW ADMIN PAGE  */
 
- .uniq_recipe {
+.uniq_recipe {
   min-height: 100%;
   width: 940px;
   margin: auto;
@@ -581,7 +590,7 @@ textarea {
 }
 
 .titleSingleRecipe h3 {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-size: 24px;
   color: #111111;
   line-height: 34px;
@@ -594,15 +603,15 @@ textarea {
   justify-content: center;
   width: 136px;
   height: 37px;
-  background-color: #6558C3;
-  font-family: 'Roboto', bold;
+  background-color: #6558c3;
+  font-family: "Roboto", bold;
   font-weight: 700;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 4px;
 }
 
-.highlight img{
+.highlight img {
   object-fit: cover;
   width: 940px;
   height: 280px;
@@ -643,7 +652,7 @@ textarea {
 }
 
 .uniq_recipe_name {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-size: 36px;
   color: #111111;
   line-height: 42px;
@@ -651,7 +660,7 @@ textarea {
 }
 
 .uniq_cooker {
-  font-family: 'Roboto', regular;
+  font-family: "Roboto", regular;
   font-size: 20px;
   color: #777777;
   line-height: 24px;
@@ -666,7 +675,7 @@ textarea {
 }
 
 .uniq_topics {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-size: 26px;
   color: #111111;
   line-height: 28px;
@@ -675,7 +684,7 @@ textarea {
 }
 
 .uniq_topics_content {
-  font-family: 'Roboto', regular;
+  font-family: "Roboto", regular;
   font-size: 18px;
   color: #444444;
   line-height: 28px;
@@ -693,14 +702,13 @@ textarea {
 /* not-found page - servidor não encontrado */
 
 .lostPage {
-
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   width: 940px;
   height: 365px;
   margin: 0px auto;
-  background: #FBDFDB;
+  background: #fbdfdb;
 
   padding: 32px 24px;
   margin: 32px auto;
@@ -708,14 +716,13 @@ textarea {
   border: 1px solid #efefef;
   border-radius: 4px;
   width: 90%;
-
 }
 
 .imageFoodfy {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: .6;
+  opacity: 0.6;
   transform: rotate(139deg);
 }
 
@@ -749,7 +756,7 @@ textarea {
   padding: 8px 32px;
   font-size: 16px;
   color: white;
-  background: #6558C3;
+  background: #6558c3;
   border-radius: 4px;
 }
 
@@ -768,7 +775,7 @@ textarea {
 
 .users-fields label,
 .inputs-users-create label {
-  font-family: 'Roboto', bold;
+  font-family: "Roboto", bold;
   font-weight: 700;
   font-size: 16px;
   color: #111111;
@@ -787,10 +794,10 @@ textarea {
   align-items: center;
 }
 
-input[type="radio"] {
+input[type="checkbox"] {
   width: 16px;
-  background: #FFFFFF;
-  border: 1px solid #DDDDDD;
+  background: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 4px;
   margin: auto 0;
 }

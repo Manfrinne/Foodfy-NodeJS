@@ -17,7 +17,7 @@ module.exports = {
     const user = await User.findOne({ where: { id } });
 
     if (user.is_admin) {
-      return res.redirect("/admin/users/usersList");
+      return res.redirect("/admin/profile/show");
     }
 
     return res.redirect("/admin/profile/show");

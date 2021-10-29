@@ -15,11 +15,11 @@
   height: 35px;
   color: white;
   font-weight: 500;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   top: 0;
   opacity: 1;
 
-  animation:  hidemessage 400ms 5s ease-out forwards
+  animation: hidemessage 400ms 2s ease-out forwards;
 }
 
 .messages.error {
@@ -27,9 +27,8 @@
 }
 
 .messages.success {
-  background-color:  rgb(122, 182, 30);
+  background-color: rgb(122, 182, 30);
 }
-
 
 /* Messages-login admin layout */
 .messages-login {
@@ -42,12 +41,12 @@
   height: 135px;
   color: white;
   font-weight: 500;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   top: 16px;
   right: 16px;
   opacity: 1;
 
-  animation:  hidemessage 400ms 5s ease-out forwards
+  animation: hidemessage 400ms 2s ease-out forwards;
 }
 
 .messages-login.error {
@@ -55,5 +54,5 @@
 }
 
 .messages-login.success {
-  background-color:  rgb(122, 182, 30);
+  background-color: rgb(122, 182, 30);
 }

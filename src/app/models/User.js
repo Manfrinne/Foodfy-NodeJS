@@ -42,7 +42,18 @@ module.exports = {
       //Hash of password
       const passwordHash = await hash(password, 8);
 
-      const values = [data.name, data.email, passwordHash, data.is_admin];
+      function is_admin() {
+        let is_admin = data.is_admin;
+        if (!is_admin) {
+          return is_admin === false;
+        } else {
+          return true;
+        }
+      }
+
+      const values = [data.name, data.email, passwordHash, is_admin()];
+
+      console.log(values);
 
       //Send password email to user
       await mailer.sendMail({

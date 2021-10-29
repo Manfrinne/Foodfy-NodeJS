@@ -21,16 +21,9 @@
     {% include 'admin/users/fields.njk' %}
 
     <div class="inputs-users-create users-isAdmin-field ">
-
-      {% if not user.is_admin %}
-        <input type="radio" id="admin" name="is_admin">
-        <label for="admin">Administrador</label>
-      {% else %}
-        <input type="radio" id="admin" name="is_admin" value="{{user.is_admin}}"
-      {% if user.is_admin == 'true' %} checked {% endif %}>
-        <label for="admin">Administrador</label>
-      {% endif %}
-
+      <input type="checkbox" id="admin" name="is_admin" class="field"
+        {% if user.is_admin %} checked {% endif %}>
+      <label for="admin">Administrador</label>
     </div>
 
   </form>

@@ -18,8 +18,4 @@ routes.get("/", function (req, res) {
   return res.redirect("/admin/users/login");
 });
 
-routes.get("/create", function (req, res) {
-  return res.redirect("/users/create");
-});
-
 module.exports = routes;
