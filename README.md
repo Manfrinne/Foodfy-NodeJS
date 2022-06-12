@@ -18,10 +18,6 @@
   
 </p>
 
-
-![](.github/show-project.gif)
-
-
 ## 👨🏻‍💻 Sobre O projeto
 
 O FoodFy é uma plataforma de compartilhamento de receitas.
