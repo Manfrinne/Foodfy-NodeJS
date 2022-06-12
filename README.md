@@ -29,6 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ## 💻 Rodando o projeto:
 
