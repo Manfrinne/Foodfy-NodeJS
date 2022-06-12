@@ -1,81 +1,55 @@
+
+<div align="center">
+
+# FOODFY - Plataforma de compartilhamento de receitas
+
+> Desenvolvimento de uma aplicação Web com NodeJS
+</div>
+
+<h1 align="center">
+    <img alt="FOODFY" title="FOODFY" src=".github/logo-chef.png" width="20%"/>
+</h1>
+
 <p align="center">
-   <img src=".github/logo-chef.png" width="200"/>
+  <a href="#-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-rodando-o-projeto">Rodando o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
 </p>
 
-# Foodfy
 
-> Projeto FoodFy (Bootcamp Rocketseat)
+![](.github/show-project.gif)
 
-## Tecnologias e ferramentas:
 
- <ul>
-  <li>NodeJS</li>
-  <li>Nodemon</li>
-  <li>Express</li>
-  <li>Nunjucks</li>
-  <li>PostgreSQL</li>
-  <li>NodeMailer</li>
- </ul>
+## 👨🏻‍💻 Sobre O projeto
 
-### Rodando o projeto:
+O FoodFy é uma plataforma de compartilhamento de receitas.
 
-1 - Clone e abra o projeto utilizando seu editor preferido.
+## 🚀 Tecnologias:
 
-2 - Rode `npm install` na pasta do projeto.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-3 - Instale as dependências de desenvolvimento com `npm install -D nodemon browser-sync npm-run-all`.
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Nunjucks](https://mozilla.github.io/nunjucks/)
 
-4 - Você vai precisar ter o PostgreSQL instalado na sua máquina.
+## 💻 Rodando o projeto:
 
-5 - Crie um banco de dados de acordo com o arquivo na raiz do projeto `database.sql`; lembre-se que esse arquivo deve estar de acordo com as especificações determinadas no arquivo `./src/config/db.js`.
+1 - Clone o projeto e o abra utilizando seu editor preferido.
 
-6 - Execute `npm start` para rodar o projeto.
+2 - Rode um `npm install` na pasta do projeto.
 
-7 - Rode `node seed.js` para popular a tabela de usuários.
+3 - Rode um `npm start` para rodar o projeto.
 
-## **🚀 Sobre o desafio**
+4 - Abra o projeto em `localhost:8080`
 
-Esse projeto foi desenvolvido durante o bootcamp Launchbase da Rocketseat, nele você pode logar como um usuário, criar e deletar receitas, cadastrar chefes e etc... 😉
+## 👨‍🏫 Como contribuir:
 
-## **Algumas características do sistema**
+-  Faça um fork do projeto;
+-  Crie uma nova branch, exemplo: `git checkout -b my-feature`;
+-  Commit as modificações, exemplo: `git commit -m 'feat: My new feature'`;
+-  Faça um push para a sua branch: `git push origin my-feature`;
 
-### **Login**
 
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-login.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-login.png)
-
-### **Recuperação de Senha**
-
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-esqueceu-senha.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-esqueceu-senha.png)
-
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-reset-senha.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-reset-senha.png)
-
-### **Usuário Logado**
-
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-profile-conta-de-usu%C3%A1rio.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-profile-conta-de-usu%C3%A1rio.png)
-
-### **Gerenciamento de Usuários: Listagem**
-
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-users-listagem.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-users-listagem.png)
-
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-users-cria%C3%A7%C3%A3o.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-users-cria%C3%A7%C3%A3o.png)
-
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-users-edi%C3%A7%C3%A3o.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-admin-users-edi%C3%A7%C3%A3o.png)
-
-### **Alertas e Erros**
-
-![https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-login-erro.png](https://github.com/rocketseat-education/bootcamp-launchbase-desafios-10/raw/master/layouts/preview/desafio-10-session-login-erro.png)
-
-## Como contribuir:
-
-- Faça um fork do projeto;
-- Crie uma nova branch, exemplo: `git checkout -b my-feature`;
-- Commit as modificações, exemplo: `git commit -m 'feat: My new feature'`;
-- Faça um push para a sua branch: `git push origin my-feature`.
-
-Criado por Manfrinne Ferreira [Contato](https://www.linkedin.com/in/manfrinne-ferreira-6033121a7/)
-
-## Licença
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
-
----
+Desenvolvido por 🧗‍♂️&nbsp; Manfrinne Ferreira 🥇 [Contato](https://www.linkedin.com/in/manfrinne-ferreira-6033121a7/) - Bootcamp da Rocketseat
