@@ -3,7 +3,7 @@
 
 # FOODFY - Compartilhamento de receitas
 
-> Desenvolvimento de uma aplicação Web com NodeJS
+> Desenvolvimento fullstack de uma aplicação Web
 </div>
 
 <h1 align="center">
