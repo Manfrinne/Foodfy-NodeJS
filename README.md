@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# FOODFY - Plataforma de compartilhamento de receitas
+# FOODFY - Compartilhamento de receitas
 
 > Desenvolvimento de uma aplicação Web com NodeJS
 </div>
